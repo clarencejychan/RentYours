@@ -28,10 +28,12 @@
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.1",
     "react-dom": "^15.6.1",
+    "react-router": "^4.1.2",
     "webpack": "^3.3.0",
     "webpack-dev-middleware": "^1.11.0"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
     "eslint": "^4.2.0",
     "eslint-loader": "^1.9.0"
   }
