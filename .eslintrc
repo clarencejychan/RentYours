@@ -1,5 +1,6 @@
 {
-    "rules": {
-        "semi": ["error", "always"]
-    }
+  "parser": "babel-eslint",
+  "rules": {
+    "semi": ["error", "always"]
+  }
 }
