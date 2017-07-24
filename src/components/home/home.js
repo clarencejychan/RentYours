@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import $ from 'jquery';
-import './style.css';
+import './style.scss';
 
 class Home extends Component {
   render() {

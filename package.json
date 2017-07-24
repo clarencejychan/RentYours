@@ -2,7 +2,7 @@
   "name": "rent-yours",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "webpack",
@@ -26,6 +26,7 @@
     "babel-preset-react": "^6.24.1",
     "express": "^4.15.3",
     "jquery": "^3.2.1",
+    "node-sass": "^4.5.3",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.1",
     "react-dom": "^15.6.1",
@@ -39,6 +40,8 @@
     "css-loader": "^0.28.4",
     "eslint": "^4.2.0",
     "eslint-loader": "^1.9.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2"
   }
 }
