@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import $ from 'jquery';
+
+import Search from '../search/search';
 import './style.scss';
+
 
 class Home extends Component {
   render() {
     return (
-      <div className="image-container">
-        <Navbar inverse className="header" />
-        <Navbar inverse staticTop collapseOnSelect fixedTop>
+      <div className="homepage-container">
+        // Navigation Bar
+        <Navbar inverse staticTop collapseOnSelect fixedTop id="nav" className="navbar">
           <Navbar.Header className="navbar-header">
             <Navbar.Brand>
               <a href="#">React-Bootstrap</a>
@@ -33,6 +36,15 @@ class Home extends Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
+
+        // Inner Container
+        <div className="homepage-inner-container">
+          <div className="logo-container">
+            <h1 className="logo-text">RentYours</h1>
+          </div>
+          // Search Bar
+          <Search />
+        </div>
       </div>
     );
   }
