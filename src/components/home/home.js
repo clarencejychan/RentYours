@@ -42,7 +42,10 @@ class Home extends Component {
           <div className="logo-container">
             <h1 className="logo-text">RentYours</h1>
           </div>
-          // Search Bar
+          <div className="footer-text">
+            blurb hurr durr
+            <div className="example-icon" />
+          </div>
           <Search />
         </div>
       </div>
