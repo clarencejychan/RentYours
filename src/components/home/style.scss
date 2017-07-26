@@ -1,10 +1,35 @@
 .homepage-container {
-  background-image: url(https://facebook.github.io/react/img/logo_og.png);
+  //background-image: url(https://facebook.github.io/react/img/logo_og.png);
+  background-image: url(http://www.smartpupils.com/images/Slides/Slide1.png);
   width: 100%;
   height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.navbar-wrapper {
-  width: 100%;
-  height: 5%;
+.logo-text {
+  color: #999999;
+  padding: 0px;
+  margin-bottom: 0px;
+}
+
+.footer-text {
+  colour: black;
+  padding: 5px;
+}
+
+.homepage-container {
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.homepage-inner-container {
+  padding: 80px;
+}
+
+div.example-icon {
+  content:url(https://cdn2.iconfinder.com/data/icons/bright-food-products/512/watermelon-512.png);
+  width: 64px;
+  height: 64;
+  background-size: cover;
 }
