@@ -17,7 +17,7 @@ class Search extends Component {
               </InputGroup.Button>
           </InputGroup>
         </Col>
-	   </Row>
+	    </Row>
     );
   }
 };
