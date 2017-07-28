@@ -1,10 +1,21 @@
 .homepage-container {
   //background-image: url(https://facebook.github.io/react/img/logo_og.png);
-  background-image: url(http://www.smartpupils.com/images/Slides/Slide1.png);
+  //background-image: url(http://www.smartpupils.com/images/Slides/Slide1.png);
+  background-image: url(https://wallpaperscraft.com/image/abstraction_geometry_shapes_colors_93400_1920x1080.jpg);
   width: 100%;
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+#navbar {
+  margin-bottom: 0px;
+  border: none;
+  background: transparent;
+}
+
+.navbar-brand, .navbar-nav>li>a {
+  text-shadow: none;
 }
 
 .logo-text {
@@ -19,8 +30,8 @@
 }
 
 .homepage-container {
-    margin: 0 auto;
-    padding: 30px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .homepage-inner-container {
@@ -28,8 +39,9 @@
 }
 
 div.example-icon {
-  content:url(https://cdn2.iconfinder.com/data/icons/bright-food-products/512/watermelon-512.png);
+  content:url(https://image.flaticon.com/icons/png/128/94/94061.png);
+  opacity: .5;
   width: 64px;
-  height: 64;
+  height: 64px;
   background-size: cover;
 }
