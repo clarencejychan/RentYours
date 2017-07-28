@@ -12,7 +12,7 @@ class Home extends Component {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
     this.render = this.render.bind(this);
-    this.state = {scrollPast: null};
+    this.state = {scrollPast: ""};
   }
 
   componentDidMount() {
@@ -25,20 +25,20 @@ class Home extends Component {
 
   //handles the scroll event for the navbar
   handleScroll() {
-     if( window.innerHeight <= document.body.scrollTop){
+     if( window.innerHeight <= document.body.scrollTop) {
        this.setState({scrollPast: 'navbar-fixed-top'});
      } else {
-       this.setState({scrollPast: false});
+       this.setState({scrollPast: null});
      }
   }
-  
+
   render(event) {
     return (
       <div className="homepage-container">
         <Navbar collapseOnSelect className={this.state.scrollPast} id="navbar" role="navigation">
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">React-Bootstrap</a>
+              <a href="#">RentYours</a>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
@@ -55,13 +55,13 @@ class Home extends Component {
             </NavDropdown>
             </Nav>
             <Nav pullRight>
-              <NavItem eventKey={1} href="#">Link Right</NavItem>
-              <NavItem eventKey={2} href="#">Link Right</NavItem>
+              <NavItem id="link-top-left" eventKey={1} href="#">Log In</NavItem>
+              <NavItem id="link-top-right" eventKey={2} href="#">Sign Up</NavItem>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
 
-        <div className="homepage-inner-container">
+        <div className="homepage-inner-container" style={{padding: window.innerHeight/6}}>
           <div className="logo-container">
             <h1 className="logo-text">RentYours</h1>
           </div>
