@@ -7,12 +7,36 @@ import './style.scss';
 
 
 class Home extends Component {
-  render() {
+
+  constructor(props) {
+    super(props);
+    this.handleScroll = this.handleScroll.bind(this);
+    this.render = this.render.bind(this);
+    this.state = {scrollPast: null};
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  //handles the scroll event for the navbar
+  handleScroll() {
+     if( window.innerHeight <= document.body.scrollTop){
+       this.setState({scrollPast: 'navbar-fixed-top'});
+     } else {
+       this.setState({scrollPast: false});
+     }
+  }
+  
+  render(event) {
     return (
       <div className="homepage-container">
-        // Navigation Bar
-        <Navbar inverse staticTop collapseOnSelect fixedTop id="nav" className="navbar">
-          <Navbar.Header className="navbar-header">
+        <Navbar collapseOnSelect className={this.state.scrollPast} id="navbar" role="navigation">
+          <Navbar.Header>
             <Navbar.Brand>
               <a href="#">React-Bootstrap</a>
             </Navbar.Brand>
@@ -37,7 +61,6 @@ class Home extends Component {
           </Navbar.Collapse>
         </Navbar>
 
-        // Inner Container
         <div className="homepage-inner-container">
           <div className="logo-container">
             <h1 className="logo-text">RentYours</h1>
