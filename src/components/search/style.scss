@@ -1,4 +1,18 @@
 // BootStrap Overrides
+.input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .search-button {
   padding: 10px 24px !important;
+}
+
+.form-group {
+  vertical-align: baseline;
+}
+
+.input-group {
+  float: none;
 }
