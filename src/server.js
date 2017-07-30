@@ -6,6 +6,8 @@ const app = express();
 
 const compiler = webpack(webpackConfig);
 
+var path = require('path');
+
 app.use(express.static(__dirname + '/../build'));
 app.use(webpackDevMiddleware(compiler, {
   hot: true,
@@ -16,6 +18,11 @@ app.use(webpackDevMiddleware(compiler, {
   },
   historyApiFallback: true,
 }));
+
+// Manage Routes *TEMP FIX*
+app.get('/*', function (req, res) {
+  res.sendFile(path.resolve(__dirname + '/../build/index.html'));
+});
 
 const server = app.listen(3040, function() {
   const host = server.address().address;
