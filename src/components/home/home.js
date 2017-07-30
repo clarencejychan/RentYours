@@ -61,7 +61,8 @@ class Home extends Component {
               </Nav>
             </Navbar.Collapse>
           </Navbar>
-          <div className="homepage-inner-container">
+          {/* TODO: change the inline styling to css with still being relative to viewport size */}
+          <div className="homepage-inner-container" style={{padding: window.innerHeight/6}}>
             <div className="logo-container">
               <h1 className="logo-text">RentYours</h1>
             </div>
@@ -72,7 +73,7 @@ class Home extends Component {
             <Search />
           </div>
         </div>
-        
+
         <div className="image-container">
           <img id="img-1" src="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/10/simple-wallpaper-13.jpg"></img>
         </div>
