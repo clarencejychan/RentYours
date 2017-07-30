@@ -45,3 +45,28 @@ div.example-icon {
   height: 64px;
   background-size: cover;
 }
+
+.image-container {
+  overflow: hidden;
+}
+
+#img-1 {
+  width: 100%;
+  height:100%;
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+
+#img-2 {
+  width: 100%;
+  height:100%;
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+
+#img-3 {
+  width: 100%;
+  height:100%;
+  background-size:contain;
+  background-repeat:no-repeat;
+}
