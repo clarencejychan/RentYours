@@ -3,22 +3,14 @@ import './style.scss';
 
 class Login extends Component {
 
-  initAuth2() {
-  }
-
-  onSignIn(googleUser) {
-    console.log(googleUser);
-  }
-
   constructor(props) {
-    var auth2;
+    var GoogleAuth;
     var GoogleUser;
-    var client;
+    var UserProfile;
     super(props);
 
     this.render = this.render.bind(this);
-    this.initAuth2 = this.initAuth2.bind(this);
-    this.onSignIn = this.onSignIn.bind(this);
+    this.isSignedIn = this.isSignedIn.bind(this);
   }
 
   componentWillMount() {
@@ -32,20 +24,32 @@ class Login extends Component {
     //appends a callback onto the script
     //the callback will run when the scripts finish loading
     window.onLoadCallback = function() {
-      gapi.load("auth2", () => {
-        gapi.auth2.init({
-          client_id:"873348700485-rgtdhg8jo9d35fbhkk3a16q85tk943q4.apps.googleusercontent.com",
-          scope: "profile"
-        });
-      });
+      this.GoogleAuth = gapi.auth2.getAuthInstance();
+
+      if(this.GoogleAuth.isSignedIn){
+        this.isSignedIn();
+      }
+
+      //else
+
     }.bind(this);
+  }
+
+  isSignedIn() {
+    console.log("User is already signed in. Redirect to home page.");
+    this.GoogleUser = this.GoogleAuth.currentUser.get();
+    this.UserProfile = gapi.auth2.BasicProfile;
+    console.log(this.UserProfile);
+    console.log(this.UserProfile.getGivenName());
+    //trying to store the profile of the current GoogleUser into UserProfile
+    //attempting to retrieve the name from the UserProfile
   }
 
   render(event) {
     return (
       <div className="login-container">
         Hehe
-        <div className="g-signin2" data-onsuccess={() => this.onSignIn}></div>
+        <div className="g-signin2" data-onsuccess="onSignIn"></div>
         Hehe
       </div>
     );
