@@ -70,7 +70,9 @@ class Home extends Component {
               blurb hurr durr
               <div className="example-icon" />
             </div>
-            <Search />
+            <div className="search-bar">
+              <Search />
+            </div>
           </div>
         </div>
 
