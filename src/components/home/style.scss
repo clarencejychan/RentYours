@@ -1,9 +1,18 @@
 .homepage-container {
-  background-image: url(https://wallpaperscraft.com/image/abstraction_geometry_shapes_colors_93400_1920x1080.jpg);
   width: 100%;
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.homepage-container-main {
+  background-image: url(https://wallpaperscraft.com/image/abstraction_geometry_shapes_colors_93400_1920x1080.jpg);
+}
+
+.homepage-inner-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 #navbar {
@@ -11,6 +20,7 @@
   border: none;
   background: transparent;
   box-shadow: none;
+  padding-top: 15px;
 }
 
 .navbar-brand, .navbar-nav>li>a {

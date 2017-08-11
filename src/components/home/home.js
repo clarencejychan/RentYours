@@ -36,42 +36,43 @@ class Home extends Component {
     return (
       <div className="homepage">
         <div className="homepage-container">
-          <Navbar collapseOnSelect className={this.state.scrollPast} id="navbar" role="navigation">
-            <Navbar.Header>
-              <Navbar.Brand>
-                <a href="#">RentYours</a>
-              </Navbar.Brand>
-              <Navbar.Toggle />
-            </Navbar.Header>
-            <Navbar.Collapse>
-              <Nav>
-                <NavItem eventKey={1} href="#">Link</NavItem>
-                <NavItem eventKey={2} href="#">Link</NavItem>
-              <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-                <MenuItem eventKey={3.1}>Action</MenuItem>
-                <MenuItem eventKey={3.2}>Another action</MenuItem>
-                <MenuItem eventKey={3.3}>Something else here</MenuItem>
-                <MenuItem divider />
-                <MenuItem eventKey={3.3}>Separated link</MenuItem>
-              </NavDropdown>
-              </Nav>
-              <Nav pullRight>
-                <NavItem id="link-top-left" eventKey={1} href="#">Log In</NavItem>
-                <NavItem id="link-top-right" eventKey={2} href="#">Sign Up</NavItem>
-              </Nav>
-            </Navbar.Collapse>
-          </Navbar>
-          {/* TODO: change the inline styling to css with still being relative to viewport size */}
-          <div className="homepage-inner-container" style={{padding: window.innerHeight/6}}>
-            <div className="logo-container">
-              <h1 className="logo-text">RentYours</h1>
-            </div>
-            <div className="footer-text">
-              blurb hurr durr
-              <div className="example-icon" />
-            </div>
-            <div className="search-bar">
-              <Search />
+          <div className="homepage-container-main">
+            <Navbar collapseOnSelect className={this.state.scrollPast} id="navbar" role="navigation">
+              <Navbar.Header>
+                <Navbar.Brand>
+                  <a href="#">RentYours</a>
+                </Navbar.Brand>
+                <Navbar.Toggle />
+              </Navbar.Header>
+              <Navbar.Collapse>
+                <Nav>
+                  <NavItem eventKey={1} href="#">Link</NavItem>
+                  <NavItem eventKey={2} href="#">Link</NavItem>
+                <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+                  <MenuItem eventKey={3.1}>Action</MenuItem>
+                  <MenuItem eventKey={3.2}>Another action</MenuItem>
+                  <MenuItem eventKey={3.3}>Something else here</MenuItem>
+                  <MenuItem divider />
+                  <MenuItem eventKey={3.3}>Separated link</MenuItem>
+                </NavDropdown>
+                </Nav>
+                <Nav pullRight>
+                  <NavItem id="link-top-left" eventKey={1} href="#">Log In</NavItem>
+                  <NavItem id="link-top-right" eventKey={2} href="#">Sign Up</NavItem>
+                </Nav>
+              </Navbar.Collapse>
+            </Navbar>
+            <div className="homepage-inner-container">
+              <div className="logo-container">
+                <h1 className="logo-text">RentYours</h1>
+              </div>
+              <div className="footer-text">
+                blurb hurr durr
+                <div className="example-icon" />
+              </div>
+              <div className="search-bar">
+                <Search />
+              </div>
             </div>
           </div>
         </div>
