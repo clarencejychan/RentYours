@@ -15,6 +15,12 @@
   padding: 0 15px;
 }
 
+.homepage-inner-container-contents {
+  padding-top: 5%;
+  padding-bottom: 35%;
+  text-align: center;
+}
+
 #navbar {
   margin-bottom: 0px;
   border: none;
@@ -48,10 +54,45 @@ div.example-icon {
   width: 64px;
   height: 64px;
   background-size: cover;
+  margin: 0 auto;
 }
 
 .image-container {
   overflow: hidden;
+}
+
+.nav-item {
+  a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #000;
+  }
+
+  a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+
 }
 
 #img-1 {
@@ -73,4 +114,21 @@ div.example-icon {
   height:100%;
   background-size:contain;
   background-repeat:no-repeat;
+}
+
+.search-bar {
+  padding-top: 20px;
+}
+
+
+/** BOOTSTRAP OVERRIDES **/
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    li {
+      a {
+        padding-bottom: 10px;
+      }
+    }
+  }
 }
