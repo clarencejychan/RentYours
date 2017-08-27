@@ -6,14 +6,14 @@ import { createStore } from 'redux';
 import App from './App';
 
 
-//let store = createStore();
+let store = createStore();
 
 
 ReactDOM.render(
-  //<Provider store={store}>
+  <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>,
-  //</Provider>,
+  </Provider>,
   document.getElementById('app')
 );
