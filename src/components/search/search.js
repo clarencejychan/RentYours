@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Row, Col, Button, InputGroup, FormControl } from 'react-bootstrap';
+import { Row, Col, Button, InputGroup, FormControl } from 'react-bootstrap';\
 import SearchButton from 'react-icons/lib/go/search';
+import getSearchItems from '../../actions/searchItems';
+import {connect} from 'react-redux';
 import './style.scss';
 
 class Search extends Component {
@@ -22,4 +24,10 @@ class Search extends Component {
   }
 };
 
-export default Search;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    getSearchItems: getSearchItems
+  }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(Search);

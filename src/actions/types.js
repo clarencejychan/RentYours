@@ -6,6 +6,7 @@ export const LOGIN_FAILURE = ' login_failure';
 // SHOPPING ACTIONS
 export const ADD_TO_CART = 'add_to_cart';
 export const REMOVE_FROM_CART = 'remove_from_cart';
+
 export const REQUESTING_CHECKOUT = 'requesting_checkout';
 export const REQUEST_CHECKOUT_SUCCESS = 'request_checkout_sending';
 export const REQUEST_CHECKOUT_FAILURE = 'request_checkout_failure';
