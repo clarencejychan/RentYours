@@ -1,1 +1,3 @@
-export const FAKE_DATA 
+export const FAKE_DATA = {
+
+};

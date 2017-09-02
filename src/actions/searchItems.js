@@ -1,4 +1,6 @@
-import {REQUESTING_ITEMS_INFO, REQUEST_ITEMS_INFO_SUCCESS, REQUEST_ITEMS_INFO_FAILURE} from './types';
+import {REQUESTING_ITEMS_INFO,
+        REQUEST_ITEMS_INFO_SUCCESS,
+        REQUEST_ITEMS_INFO_FAILURE} from './types';
 import fetch from 'isomorphic-fetch';
 
 // REQUEST ITEMS ACTION
@@ -14,7 +16,8 @@ function requestItems(itemName) {
 function requestItemsSuccess(itemName, itemInfo) {
   return {
     type: REQUEST_ITEMS_INFO_SUCCESS,
-
+    receivedAt: Date.now(),
+    posts: itemInfo.
   }
 }
 
@@ -32,6 +35,8 @@ export default function getSearchItems(itemName)) {
   return dispatch => {
     // Show that it is requesting, will be updated after.
     dispatch(requestItems(itemName));
+
+    // URL todo.
     fetch('')
     .then(
       reponse => response.json(),
