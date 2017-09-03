@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Button, InputGroup, FormControl } from 'react-bootstrap';
 import SearchButton from 'react-icons/lib/go/search';
+import { bindActionCreators } from 'redux';
 import getSearchItems from '../../actions/searchItems';
 import {connect} from 'react-redux';
 import './style.scss';
@@ -15,6 +16,7 @@ class Search extends Component {
     this.props.getSearchItems(itemName);
   }
 
+  // Fill in proper values
   render() {
     return (
       <Row>
@@ -22,7 +24,7 @@ class Search extends Component {
           <InputGroup bsSize="large">
             <FormControl className="search-form" placeholder="Enter text"/>
               <InputGroup.Button bsSize="large">
-                <Button bsSize="large" className="search-button" onClick={this.handleSearch("FILL ME WITH SOMETHING")}>
+                <Button bsSize="large" className="search-button" onClick={() => this.handleSearch("test")}>
                   <SearchButton size={'18px'}/>
                 </Button>
               </InputGroup.Button>

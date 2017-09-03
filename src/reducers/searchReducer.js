@@ -5,23 +5,25 @@ import {REQUESTING_ITEMS_INFO,
 export default function(state = { isFetching: false, error: false, searchQuery:"", items:[] }, action) {
   switch (action.type) {
     case REQUESTING_ITEMS_INFO:
+      console.log(action);
       return Object.assign({}, state, {
         isFetching: true,
-        searchQuery: action.itemName
-      })
+        searchQuery: action.searchQuery
+      });
     case REQUEST_ITEMS_INFO_SUCCESS:
+      console.log(action);
       return Object.assign({}, state, {
         isFetching: false,
         error: false,
         items: action.posts,
         lastUpdated: action.receivedAt
-      })
+      });
     case REQUEST_ITEMS_INFO_FAILURE:
       return Object.assign({}, state, {
         isFetching: false,
-        searchQuery: action.itemName
+        searchQuery: action.itemName,
         error: true
-      })
+      });
     default:
       return state;
   }

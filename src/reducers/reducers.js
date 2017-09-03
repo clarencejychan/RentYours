@@ -8,3 +8,5 @@ const rootReducer = combineReducers({
   items: searchReducer
   //userItems: itemsReducers
 });
+
+export default rootReducer;
