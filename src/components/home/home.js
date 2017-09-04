@@ -66,7 +66,7 @@ class Home extends Component {
               </Navbar.Collapse>
             </Navbar>
 
-            {/* Home Page Hero*/}
+            {/* Home Page Hero FIX: CREATE AS OWN FUNCTIONAL CLASS*/}
             <div className="homepage-inner-container">
               <div className="homepage-inner-container-contents">
                 <div className="logo-container">
@@ -76,6 +76,7 @@ class Home extends Component {
                   blurb hurr durr
                   <div className="example-icon" />
                 </div>
+                {/* SEARCH BAR*/}
                 <div className="search-bar">
                   <Search />
                 </div>
