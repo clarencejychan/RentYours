@@ -1,7 +1,7 @@
 import {REQUESTING_ITEMS_INFO,
         REQUEST_ITEMS_INFO_SUCCESS,
         REQUEST_ITEMS_INFO_FAILURE} from './types';
-import fetch from 'isomorphic-fetch';
+import axios from 'axios';
 
 // REQUEST ITEMS ACTION
 function requestItems(itemName) {
@@ -33,7 +33,7 @@ export default function getSearchItems(itemName) {
     // Show that it is requesting, will be updated after.
     dispatch(requestItems(itemName));
     // URL todo.
-    return fetch('/search')
+    return axios.get('/search')
     .then(
       response => response.json(),
       error => dispatch(requestItemsFailure(itemName))
