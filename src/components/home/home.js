@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import $ from 'jquery';
 
+import Info from '../infosections/info';
 import Search from '../search/search';
-import './style.scss';
 
+import './style.scss';
 
 class Home extends Component {
 
   constructor(props) {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
-    this.render = this.render.bind(this);
     this.state = {scrollPast: ""};
   }
 
@@ -34,7 +34,7 @@ class Home extends Component {
      }
   }
 
-  render(event) {
+  render() {
     return (
       <div className="homepage">
         <div className="homepage-container">
@@ -76,25 +76,19 @@ class Home extends Component {
                   blurb hurr durr
                   <div className="example-icon" />
                 </div>
+
                 {/* SEARCH BAR*/}
                 <div className="search-bar">
                   <Search />
                 </div>
               </div>
             </div>
-
-
-            <div className="image-container">
-              <img id="img-1" src="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/10/simple-wallpaper-13.jpg"></img>
-            </div>
-            <div className="image-container">
-              <img id="img-2" src="http://wallpapercave.com/wp/4SSFz3R.png"></img>
-            </div>
-            <div className="image-container">
-              <img id="img-3" src="https://hdwallsource.com/img/2014/9/simple-backgrounds-17277-17833-hd-wallpapers.jpg"></img>
-            </div>
-
           </div>
+
+
+          {/* Home Page Hero FIX: CREATE AS OWN FUNCTIONAL CLASS*/}
+          <Info />
+
         </div>
       </div>
     );

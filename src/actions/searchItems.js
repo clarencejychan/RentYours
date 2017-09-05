@@ -12,7 +12,6 @@ function requestItems(itemName) {
 }
 
 // REQUEST ITEMS SUCCESS ACTION
-
 function requestItemsSuccess(itemName, itemInfo) {
   return {
     type: REQUEST_ITEMS_INFO_SUCCESS,
@@ -22,7 +21,6 @@ function requestItemsSuccess(itemName, itemInfo) {
 }
 
 // REQUEST ITEMS FAILURE ACTION
-
 function requestItemsFailure(itemName) {
   return {
     type: REQUEST_ITEMS_INFO_FAILURE,

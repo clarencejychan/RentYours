@@ -16,7 +16,6 @@ class Login extends Component {
     var client;
     super(props);
 
-    this.render = this.render.bind(this);
     this.initAuth2 = this.initAuth2.bind(this);
     this.onSignIn = this.onSignIn.bind(this);
   }
@@ -41,7 +40,7 @@ class Login extends Component {
     }.bind(this);
   }
 
-  render(event) {
+  render() {
     return (
       <div className="login-container">
         Hehe
