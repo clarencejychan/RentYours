@@ -35,10 +35,11 @@ export default function getSearchItems(itemName) {
     // URL todo.
     return axios.get('/search')
     .then(response => {
-      let json = response.json();
+      console.log(response);
+      console.log(response.data);
+      let json = response.data;
       dispatch(requestItemsSuccess(itemName, json));
     }).catch(error => {
-
       dispatch(requestItemsFailure(itemName));
     });
   };
