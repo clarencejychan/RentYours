@@ -34,12 +34,13 @@ export default function getSearchItems(itemName) {
     dispatch(requestItems(itemName));
     // URL todo.
     return axios.get('/search')
-    .then(
-      response => response.json(),
-      error => dispatch(requestItemsFailure(itemName))
-    ).then(
-      json => dispatch(requestItemsSuccess(itemName, json))
-    );
+    .then(response => {
+      let json = response.json();
+      dispatch(requestItemsSuccess(itemName, json));
+    }).catch(error => {
+
+      dispatch(requestItemsFailure(itemName));
+    });
   };
   //console.log('hehexd');
 }
