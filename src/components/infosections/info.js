@@ -7,7 +7,7 @@ import './style.scss';
 
 const Info = () => {
   return(
-    <div className="homepage-inner-container">
+    <div className="homepage-info homepage-inner-container">
       <div className="homepage-how-it-works-content">
         <h2 className="how-it-works-content-title">
           How it works

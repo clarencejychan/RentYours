@@ -1,3 +1,6 @@
+$main-color: #0a9b66;
+$hover-color: #088356;
+
 // BootStrap Overrides
 .input-group {
   display: flex;
@@ -7,6 +10,23 @@
 
 .search-button {
   padding: 10px 24px !important;
+  background-color: $main-color;
+  border-color:  $main-color;
+  background-image: none;
+}
+
+.search-button:hover {
+  background-color: $hover-color;
+  border-color: $hover-color;
+}
+
+.search-form {
+  border: 1px solid $main-color;
+}
+
+.form-control:focus {
+  border-color: $main-color;
+  box-shadow: 0 0 5px rgb(10,155,102);
 }
 
 .form-group {

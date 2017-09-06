@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Tammudu|Pacifico');
+
 .homepage-container {
-  width: 100%;
-  height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -33,27 +33,29 @@
   text-shadow: none;
 }
 
-.logo-text {
-  color: #999999;
-  padding: 0px;
-  margin-bottom: 0px;
-}
+.logo-container {
 
-.footer-text {
-  color: black;
-  padding: 5px;
+  margin-bottom: 20px;
+  .logo-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 60px;
+    color: #000000;
+    padding: 0px;
+    margin-bottom: 15px;
+    display: inline-block;
+  }
+  .example-icon {
+    content:url(https://image.flaticon.com/icons/png/128/94/94061.png);
+    opacity: .5;
+    width: 64px;
+    height: 64px;
+    background-size: cover;
+    margin: 0 auto;
+    display: inline-block;
+  }
 }
 
 .homepage-container {
-  margin: 0 auto;
-}
-
-div.example-icon {
-  content:url(https://image.flaticon.com/icons/png/128/94/94061.png);
-  opacity: .5;
-  width: 64px;
-  height: 64px;
-  background-size: cover;
   margin: 0 auto;
 }
 

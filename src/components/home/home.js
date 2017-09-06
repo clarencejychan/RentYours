@@ -71,9 +71,6 @@ class Home extends Component {
               <div className="homepage-inner-container-contents">
                 <div className="logo-container">
                   <h1 className="logo-text">RentYours</h1>
-                </div>
-                <div className="footer-text">
-                  blurb hurr durr
                   <div className="example-icon" />
                 </div>
 
