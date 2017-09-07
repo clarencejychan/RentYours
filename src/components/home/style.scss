@@ -56,11 +56,16 @@ $main-color: #0a9b66;
   }
 }
 
+.nav-logo {
+  font-family: 'Pacifico', cursive;
+  color: #000000 !important
+}
+
 .homepage-container {
   margin: 0 auto;
 }
 
-.nav-item {
+.nav-items {
   a {
     position: relative;
     color: #000;
@@ -91,7 +96,6 @@ $main-color: #0a9b66;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
   }
-
 }
 
 .search-bar {
@@ -104,6 +108,17 @@ $main-color: #0a9b66;
     li {
       a {
         padding-bottom: 10px;
+      }
+    }
+  }
+}
+
+
+.navbar-default {
+  .navbar-nav {
+    li {
+      a {
+        color: #000000;
       }
     }
   }

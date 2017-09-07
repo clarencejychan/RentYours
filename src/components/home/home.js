@@ -45,7 +45,7 @@ class Home extends Component {
             <Navbar collapseOnSelect className={this.state.scrollPast} id="navbar" role="navigation">
               <Navbar.Header>
                 <Navbar.Brand>
-                  <a href="#">RentYours</a>
+                  <a href="#" className="nav-logo">RentYours</a>
                 </Navbar.Brand>
                 <Navbar.Toggle />
               </Navbar.Header>
