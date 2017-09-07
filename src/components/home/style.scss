@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Tammudu|Pacifico');
+$main-color: #0a9b66;
 
 .homepage-container {
   background-size: cover;
@@ -97,9 +98,7 @@
   padding-top: 20px;
 }
 
-
 /** BOOTSTRAP OVERRIDES **/
-
 @media (min-width: 768px) {
   .navbar-nav {
     li {

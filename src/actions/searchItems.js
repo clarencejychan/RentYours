@@ -34,7 +34,7 @@ export default function getSearchItems(itemName) {
     // Show that it is requesting, will be updated after.
     dispatch(requestItems(itemName));
     // URL todo.
-    return axios.get('/search')
+    return axios.get('/api/search')
     .then(response => {
       console.log(response);
       console.log(response.data);

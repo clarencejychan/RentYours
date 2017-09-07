@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import TrashIcon from 'react-icons/lib/ti/trash';
 import ShoppingCartIcon from 'react-icons/lib/ti/shopping-cart';
-import PaintCanIcon from 'react-icons/lib/go/paintcan';
+import SpannerIcon from 'react-icons/lib/ti/spanner-outline';
 
 import './style.scss';
 
@@ -37,7 +37,7 @@ const Info = () => {
           </div>
         </li>
         <li className="how-it-works-items">
-          <PaintCanIcon size={'100px'} />
+          <SpannerIcon size={'100px'} />
           <div className="how-it-works-items-text">
             <h3 className="how-it-works-items-text-title">
               BLURB ABOUT HOW IT WORKS

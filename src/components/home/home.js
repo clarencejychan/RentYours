@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -78,10 +79,10 @@ class Home extends Component {
                 <div className="search-bar">
                   <Search />
                 </div>
+
               </div>
             </div>
           </div>
-
 
           {/* Home Page Hero FIX: CREATE AS OWN FUNCTIONAL CLASS*/}
           <Info />
@@ -91,5 +92,6 @@ class Home extends Component {
     );
   }
 };
+
 
 export default Home;
