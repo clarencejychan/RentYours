@@ -1,0 +1,22 @@
+.how-it-works-content-title {
+  margin: 20px 0 10px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.how-it-works-content-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.how-it-works-items {
+  max-width: 200px;
+  text-align: center
+}
+
+.how-it-works-items-text-title {
+  margin-bottom: 20px;
+}

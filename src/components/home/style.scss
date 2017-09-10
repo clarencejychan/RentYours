@@ -1,15 +1,32 @@
 .homepage-container {
-  background-image: url(https://wallpaperscraft.com/image/abstraction_geometry_shapes_colors_93400_1920x1080.jpg);
   width: 100%;
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
+.homepage-container-main {
+  background-image: url(https://wallpaperscraft.com/image/abstraction_geometry_shapes_colors_93400_1920x1080.jpg);
+}
+
+.homepage-inner-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.homepage-inner-container-contents {
+  padding-top: 5%;
+  padding-bottom: 35%;
+  text-align: center;
+}
+
 #navbar {
   margin-bottom: 0px;
   border: none;
   background: transparent;
+  box-shadow: none;
+  padding-top: 15px;
 }
 
 .navbar-brand, .navbar-nav>li>a {
@@ -29,7 +46,6 @@
 
 .homepage-container {
   margin: 0 auto;
-  padding: 20px;
 }
 
 div.example-icon {
@@ -38,29 +54,56 @@ div.example-icon {
   width: 64px;
   height: 64px;
   background-size: cover;
+  margin: 0 auto;
 }
 
-.image-container {
-  overflow: hidden;
+.nav-item {
+  a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #000;
+  }
+
+  a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+
 }
 
-#img-1 {
-  width: 100%;
-  height:100%;
-  background-size:contain;
-  background-repeat:no-repeat;
+.search-bar {
+  padding-top: 20px;
 }
 
-#img-2 {
-  width: 100%;
-  height:100%;
-  background-size:contain;
-  background-repeat:no-repeat;
-}
 
-#img-3 {
-  width: 100%;
-  height:100%;
-  background-size:contain;
-  background-repeat:no-repeat;
+/** BOOTSTRAP OVERRIDES **/
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    li {
+      a {
+        padding-bottom: 10px;
+      }
+    }
+  }
 }
