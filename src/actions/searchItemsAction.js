@@ -13,7 +13,6 @@ function requestItems(itemName) {
 
 // REQUEST ITEMS SUCCESS ACTION
 function requestItemsSuccess(itemName, itemInfo) {
-  console.log(itemInfo);
   return {
     type: REQUEST_ITEMS_INFO_SUCCESS,
     receivedAt: Date.now(),

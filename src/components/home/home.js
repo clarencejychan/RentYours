@@ -51,7 +51,7 @@ class Home extends Component {
               </Navbar.Header>
               <Navbar.Collapse>
                 <Nav pullRight>
-                  <LinkContainer to="/test" className="nav-item">
+                  <LinkContainer to="/addlisting" className="nav-item">
                     <NavItem id="list-items">List Items</NavItem>
                   </LinkContainer>
                   <LinkContainer to="/listings" className="nav-item">

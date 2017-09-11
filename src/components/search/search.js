@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Row, Col, Button, InputGroup, FormControl } from 'react-bootstrap';
-import SearchButton from 'react-icons/lib/go/search';
 import { bindActionCreators } from 'redux';
-import getSearchItems from '../../actions/searchItems';
 import { connect } from 'react-redux';
+import SearchButton from 'react-icons/lib/go/search';
+import getSearchItems from '../../actions/searchItemsAction';
+
 import './style.scss';
 
 class Search extends Component {
