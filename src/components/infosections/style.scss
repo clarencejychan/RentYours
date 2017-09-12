@@ -1,4 +1,12 @@
+.homepage-info {
+  &.homepage-inner-container {
+    font-family: 'Baloo Tammudu', cursive;
+  }
+}
+
 .how-it-works-content-title {
+  font-size: 40px;
+  line-height: normal;
   margin: 20px 0 10px 0;
   text-align: center;
   text-transform: uppercase;

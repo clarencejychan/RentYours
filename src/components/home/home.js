@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -44,13 +45,13 @@ class Home extends Component {
             <Navbar collapseOnSelect className={this.state.scrollPast} id="navbar" role="navigation">
               <Navbar.Header>
                 <Navbar.Brand>
-                  <a href="#">RentYours</a>
+                  <a href="#" className="nav-logo">RentYours</a>
                 </Navbar.Brand>
                 <Navbar.Toggle />
               </Navbar.Header>
               <Navbar.Collapse>
                 <Nav pullRight>
-                  <LinkContainer to="/test" className="nav-item">
+                  <LinkContainer to="/addlisting" className="nav-item">
                     <NavItem id="list-items">List Items</NavItem>
                   </LinkContainer>
                   <LinkContainer to="/listings" className="nav-item">
@@ -71,9 +72,6 @@ class Home extends Component {
               <div className="homepage-inner-container-contents">
                 <div className="logo-container">
                   <h1 className="logo-text">RentYours</h1>
-                </div>
-                <div className="footer-text">
-                  blurb hurr durr
                   <div className="example-icon" />
                 </div>
 
@@ -81,10 +79,10 @@ class Home extends Component {
                 <div className="search-bar">
                   <Search />
                 </div>
+
               </div>
             </div>
           </div>
-
 
           {/* Home Page Hero FIX: CREATE AS OWN FUNCTIONAL CLASS*/}
           <Info />
@@ -94,5 +92,6 @@ class Home extends Component {
     );
   }
 };
+
 
 export default Home;
