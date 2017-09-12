@@ -7,12 +7,13 @@ class Login extends Component {
   constructor(props) {
     var GoogleAuth;
     var GoogleUser;
-    var UserProfile;
+    var BasicProfile;
     super(props);
 
     this.renderGoogleButton = this.renderGoogleButton.bind(this);
     this.onload = this.onload.bind(this);
     this.signedIn = this.signedIn.bind(this);
+    this.signout = this.signout.bind(this);
     this.state = {signedIn: null};
   }
 
@@ -31,6 +32,7 @@ class Login extends Component {
 
   onload() {
     this.GoogleAuth = gapi.auth2.getAuthInstance();
+    this.GoogleUser = this.GoogleAuth.currentUser.get();
     this.renderGoogleButton();
     this.GoogleAuth.isSignedIn.listen(this.signedIn);
     if(this.GoogleAuth.isSignedIn == true){
@@ -47,9 +49,20 @@ class Login extends Component {
     if(this.state.signedIn == true){
       console.log("User is already signed in. Redirect to home page.");
       this.renderSignoutButton();
+      //TODO: fix this event listener handler
+      //document.getElementById("signoutButton").addEventListener("click", this.signout());
     } else if (this.state.signedIn == false){
       console.log("User is not signed in.");
     }
+  }
+
+  signout() {
+    this.GoogleAuth.signOut();
+    this.renderGoogleButton();
+    this.renderSignoutButton();
+    this.setState({signedIn: false});
+    document.getElementById("signoutButton").removeEventListener("click", this.signout());
+    console.log("User has clicked button and is now signed out. ");
   }
 
   renderGoogleButton(){
@@ -74,18 +87,17 @@ class Login extends Component {
     });
     var signoutButtonId = document.querySelectorAll("[id^='connected']");
     document.getElementById($(signoutButtonId[1]).attr("id")).innerHTML = "Sign Out";
+    console.log("hullo");
   }
 
-  render(event) {
-
+  render() {
     const signinState = this.state.signedIn;
     let loginButton = null;
     if (signinState == true){
-      loginButton = <div className="googleButtons"><div className="g-signin2" id="googleButton"></div><div className="g-signin2" id="signoutButton"></div></div>;
+      loginButton = <div className="google-login"><div className="g-signin2" id="googleButton"></div><div className="g-signin2" id="signoutButton"></div></div>;
     } else {
-      loginButton = <div className="googleButton"><div className="g-signin2" id="googleButton"></div></div>;
+      loginButton = <div className="google-login"><div className="g-signin2" id="googleButton"></div></div>;
     }
-
     return (
       <div className="login-container">
         {loginButton}
