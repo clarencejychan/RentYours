@@ -57,7 +57,8 @@ class AddItems extends Component {
       itemName: this.state.itemName,
       itemPrice: this.state.itemPrice,
       itemDescription: this.state.itemDescription,
-      itemLocation: this.state.itemLocation
+      itemLocation: this.state.itemLocation,
+      timeAdded: Date.now()
     };
     console.log(itemInfo);
     this.props.submitInfo(itemInfo);

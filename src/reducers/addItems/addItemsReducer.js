@@ -10,7 +10,8 @@ export default function(state = {isAdding: false}, action) {
         itemName: action.itemName,
         itemPrice: action.itemPrice,
         itemDescription: action.itemDescription,
-        itemLocation: action.itemLocation
+        itemLocation: action.itemLocation,
+        timeAdded: action.timeAdded
       });
     case ADD_ITEMS_SUCCESS:
       return Object.assign({}, state, {
