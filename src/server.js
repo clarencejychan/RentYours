@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpack = require('webpack');
@@ -47,7 +48,7 @@ app.post('/api/additem', function (req, res) {
   var item = new Items({
     itemName: req.body.itemName,
     itemPrice: req.body.itemPrice,
-    itemDescription: req.body.Description,
+    itemDescription: req.body.itemDescription,
     itemLocation: req.body.itemLocation,
     timeAdded: req.body.timeAdded
   });
