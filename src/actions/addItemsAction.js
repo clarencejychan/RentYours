@@ -10,7 +10,8 @@ function addItems(itemInfo) {
     itemName: itemInfo.itemName,
     itemPrice: itemInfo.itemPrice,
     itemDescription: itemInfo.itemDescription,
-    itemLocation: itemInfo.Location
+    itemLocation: itemInfo.Location,
+    timeAdded: itemInfo.timeAdded
   };
 }
 
