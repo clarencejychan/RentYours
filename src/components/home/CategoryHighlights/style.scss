@@ -1,0 +1,12 @@
+$text-font: 'Open Sans', sans-serif;
+$main-font: 'PT Serif', serif;
+
+.category-highlight {
+  height: 300px;
+  margin: 0 auto;
+
+  .category-highlight-titles {
+    font-family: $main-font;
+    float: left;
+  }
+}

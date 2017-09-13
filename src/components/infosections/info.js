@@ -1,16 +1,16 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import TrashIcon from 'react-icons/lib/ti/trash';
 import ShoppingCartIcon from 'react-icons/lib/ti/shopping-cart';
-import SpannerIcon from 'react-icons/lib/ti/spanner-outline';
+import LocationIcon from 'react-icons/lib/ti/location';
 
 import './style.scss';
 
 const Info = () => {
   return(
-    <div className="homepage-info homepage-inner-container">
+    <div className="homepage-info homepage-inner-container container">
       <div className="homepage-how-it-works-content">
         <h2 className="how-it-works-content-title">
-          How it works
+          How It Works
         </h2>
       </div>
       <ul className="how-it-works-content-boxes">
@@ -18,10 +18,10 @@ const Info = () => {
           <TrashIcon size={'100px'} />
           <div className="how-it-works-items-text">
             <h3 className="how-it-works-items-text-title">
-              BLURB ABOUT HOW IT WORKS
+              List old items for rent.
             </h3>
             <p>
-              TEXT ABOUT HOW THIS WORKS AND HOW THIS IS GOING TO BE GREAT AND AWESOME AND WHAT IT CAN DO
+              Put up items that you don't use all the time for short or long term rental.
             </p>
           </div>
         </li>
@@ -29,21 +29,21 @@ const Info = () => {
           <ShoppingCartIcon size={'100px'} />
           <div className="how-it-works-items-text">
             <h3 className="how-it-works-items-text-title">
-              BLURB ABOUT HOW IT WORKS
+              Shop for the items you need.
             </h3>
             <p>
-              TEXT ABOUT HOW THIS WORKS AND HOW THIS IS GOING TO BE GREAT AND AWESOME AND WHAT IT CAN DO
+              Rent items you only need once, twice or seasonaly. 
             </p>
           </div>
         </li>
         <li className="how-it-works-items">
-          <SpannerIcon size={'100px'} />
+          <LocationIcon size={'100px'} />
           <div className="how-it-works-items-text">
             <h3 className="how-it-works-items-text-title">
-              BLURB ABOUT HOW IT WORKS
+              Locate items near you for rent.
             </h3>
             <p>
-              TEXT ABOUT HOW THIS WORKS AND HOW THIS IS GOING TO BE GREAT AND AWESOME AND WHAT IT CAN DO
+              Items are location based for the renter/lister convenience.
             </p>
           </div>
         </li>

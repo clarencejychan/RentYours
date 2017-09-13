@@ -11,17 +11,15 @@ var path = require('path');
 var mongoose = require('mongoose');
 var Items = require('./models/items');
 
-
 const app = express();
 
 const compiler = webpack(webpackConfig);
 
 mongoose.connect(process.env.MONGO_URI);
-
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('connected!');
+  console.log('Mongoose is Connected');
 });
 
 // Middleware

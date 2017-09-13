@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Baloo+Tammudu|Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|PT+Serif');
+$main-font: 'PT Serif', serif;
+$text-font: 'Open Sans', sans-serif;
 $main-color: #0a9b66;
 
 .homepage-container {
@@ -7,7 +9,7 @@ $main-color: #0a9b66;
 }
 
 .homepage-container-main {
-  background-image: url(https://wallpaperscraft.com/image/abstraction_geometry_shapes_colors_93400_1920x1080.jpg);
+  background-image: url(https://wallpaperscraft.com/image/background_tools_drawings_patterns_18527_2560x1600.jpg);
 }
 
 .homepage-inner-container {
@@ -38,13 +40,14 @@ $main-color: #0a9b66;
 
   margin-bottom: 20px;
   .logo-text {
-    font-family: 'Pacifico', cursive;
+    font-family: $main-font;
     font-size: 60px;
-    color: #000000;
+    color: #ffffff;
     padding: 0px;
     margin-bottom: 15px;
     display: inline-block;
   }
+  /**
   .example-icon {
     content:url(https://image.flaticon.com/icons/png/128/94/94061.png);
     opacity: .5;
@@ -54,47 +57,27 @@ $main-color: #0a9b66;
     margin: 0 auto;
     display: inline-block;
   }
+  **/
 }
 
 .nav-logo {
-  font-family: 'Pacifico', cursive;
-  color: #000000 !important
+  font-family: $main-font;
+  color: #ffffff !important;  
 }
 
 .homepage-container {
   margin: 0 auto;
 }
 
-.nav-items {
+.nav-item {
   a {
     position: relative;
-    color: #000;
+    color: #ffffff;;
     text-decoration: none;
   }
 
   a:hover {
-    color: #000;
-  }
-
-  a:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #000;
-    visibility: hidden;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-  }
-
-  a:hover:before {
-    visibility: visible;
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
+    color: #fff;
   }
 }
 
@@ -118,8 +101,40 @@ $main-color: #0a9b66;
   .navbar-nav {
     li {
       a {
-        color: #000000;
+        color: #ffffff !important;
       }
     }
   }
+}
+
+.navbar-fixed-top {
+  padding-top: 0px !important;
+  background-color: #e7e7e7 !important;
+  .container {
+    .navbar-header {
+      .nav-logo {
+        color: #000000 !important;
+      }
+    }
+    .navbar-collapse {
+      .nav {
+        .nav-item {
+
+        }
+      }
+    }
+  }
+  &.navbar-default {
+    .navbar-nav {
+      li {
+        a {
+          color: #000000 !important;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  font-family: $text-font;
 }

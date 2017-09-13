@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import $ from 'jquery';
 
+import CategoryHighlight from './CategoryHighlights/CategoryHighlight';
 import Info from '../infosections/info';
 import Search from '../search/search';
 
@@ -72,7 +73,6 @@ class Home extends Component {
               <div className="homepage-inner-container-contents">
                 <div className="logo-container">
                   <h1 className="logo-text">RentYours</h1>
-                  <div className="example-icon" />
                 </div>
 
                 {/* SEARCH BAR*/}
@@ -86,6 +86,9 @@ class Home extends Component {
 
           {/* Home Page Hero FIX: CREATE AS OWN FUNCTIONAL CLASS*/}
           <Info />
+          <CategoryHighlight category="Classroom" />
+          <CategoryHighlight category="Clothing" />
+          <CategoryHighlight category="Tools" />
 
         </div>
       </div>

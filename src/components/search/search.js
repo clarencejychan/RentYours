@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import SearchButton from 'react-icons/lib/go/search';
 import getSearchItems from '../../actions/searchItemsAction';
+import Spinner from '../assets/spinner/spinner';
 
 import './style.scss';
 
