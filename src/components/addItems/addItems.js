@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
-import { FormGroup, ControlLabel, FormControl, Button, HelpBlock } from 'react-bootstrap';
+import { Col, FormGroup, ControlLabel, FormControl, Button, HelpBlock, Form } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import submitInfo from '../../actions/addItemsAction';
+import Spinner from '../assets/spinner/spinner';
 
 import './style.scss';
 
 const FormItems = (props) => {
-  return (
-    <FormGroup>
-      <ControlLabel>{props.labelTitle}</ControlLabel>
-      <FormControl type="text" placeholder={props.placeHolderText} onChange={(event) => props.updateData(props.formType, event)}  />
-    </FormGroup>
-  );
+  if (props.formType === "itemDescription") {
+    return (
+      <FormGroup>
+        <ControlLabel>{props.labelTitle}</ControlLabel>
+          <FormControl componentClass="textarea" type="text" placeholder={props.placeHolderText} onChange={(event) => props.updateData(props.formType, event)}  />
+      </FormGroup>
+    );
+  } else {
+    return (
+      <FormGroup>
+        <ControlLabel>{props.labelTitle}</ControlLabel>
+        <FormControl type="text" placeholder={props.placeHolderText} onChange={(event) => props.updateData(props.formType, event)}  />
+      </FormGroup>
+    );
+  };
 };
 
 class AddItems extends Component {
@@ -74,14 +84,32 @@ class AddItems extends Component {
         <FormItems formType="itemPrice" labelTitle='Price' placeHolderText='Enter price' updateData={ this.checkValidation }/>
         <FormItems formType="itemDescription" labelTitle='Description' placeHolderText='Enter description' updateData={ this.checkValidation }/>
         <FormItems formType="itemLocation" labelTitle='Location' placeHolderText='Enter location' updateData={ this.checkValidation }/>
-        <Button className="submit-button" onClick={this.submitInfoHandler}>
+        { this.props.isAdding ? (
+          <Spinner />
+        ) : (
+          <Button bsSize="large" className="submit-button" onClick={this.submitInfoHandler}>
             Add Listing
-        </Button>
+          </Button>
+        )}
+        { this.props.itemAdded ? (
+          <h2>
+            Item Added
+          </h2>
+        ) : (
+          ""
+        )}
+
       </div>
     );
   }
 };
 
+function mapStateToProps(state) {
+  return {
+    isAdding: state.addItemsInfo.isAdding,
+    itemAdded: state.addItemsInfo.itemAddedStatus
+  };
+}
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
@@ -89,4 +117,4 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(AddItems);
+export default connect(mapStateToProps, mapDispatchToProps)(AddItems);
