@@ -13,14 +13,14 @@ const FormItems = (props) => {
   if (props.formType === "itemDescription") {
     return (
       <FormGroup>
-        <ControlLabel>{props.labelTitle}</ControlLabel>
+        <ControlLabel className="additem-label">{props.labelTitle}</ControlLabel>
           <FormControl componentClass="textarea" type="text" placeholder={props.placeHolderText} onChange={(event) => props.updateData(props.formType, event)}  />
       </FormGroup>
     );
   } else {
     return (
       <FormGroup>
-        <ControlLabel>{props.labelTitle}</ControlLabel>
+        <ControlLabel className="additem-label">{props.labelTitle}</ControlLabel>
         <FormControl type="text" placeholder={props.placeHolderText} onChange={(event) => props.updateData(props.formType, event)}  />
       </FormGroup>
     );

@@ -10,6 +10,10 @@ $hover-color: #088356;
   padding: 0 10px;
   text-align: center;
 
+  .additem-label {
+    float: left;
+  }
+
   .addlisting-title {
     font-family: $main-font;
     margin-bottom: 40px;
@@ -45,7 +49,7 @@ $hover-color: #088356;
     background-color: $main-color;
     border-color: $main-color;
   }
-  
+
   .submit-button:focus {
     background-color: $main-color !important;
     border-color: $main-color !important;
@@ -58,4 +62,3 @@ $hover-color: #088356;
     margin-bottom: 15px;
   }
 }
-
