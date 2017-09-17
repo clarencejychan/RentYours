@@ -11,6 +11,7 @@ function addItems(itemInfo) {
     itemPrice: itemInfo.itemPrice,
     itemDescription: itemInfo.itemDescription,
     itemLocation: itemInfo.itemLocation,
+    itemImageUrl: itemInfo.itemImageUrl,
     timeAdded: itemInfo.timeAdded
   };
 }

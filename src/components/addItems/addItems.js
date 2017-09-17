@@ -43,23 +43,24 @@ class AddItems extends Component {
       itemPrice: "",
       itemDescription: "",
       itemLocation: "",
+      itemImageUrl: "",
+      itemSignedRequest: "",
+      itemImage: null
     };
   }
 
   // Dropzone Function
   onDrop(files) {
-    console.log(files[0]);
-    console.log(files[0].name);
+    this.setState({itemImage: files[0]});
     this.getSignedRequest(files[0]);
-
   }
-
 
   getSignedRequest(file) {
     return axios.get(`/api/sign-s3?file-name=${file.name}&file-type=${file.type}`)
     .then(response => {
       console.log(response.data);
-      this.uploadFile(file, response.data.signedRequest, response.data.url);
+      this.setState({itemSignedRequest: response.data.signedRequest});
+      this.setState({itemImageUrl: response.data.url});
     }).catch(error => {
       console.log(error);
     }); 
@@ -68,7 +69,8 @@ class AddItems extends Component {
   uploadFile(file, signedRequest, url) {
     return axios.put(signedRequest, file)
     .then(response => {
-      console.log('finished');
+      console.log('itemUploaded');
+      console.log(url);
     }).catch(error => {
       console.log('Could not upload file.');
     });
@@ -102,9 +104,11 @@ class AddItems extends Component {
       itemPrice: this.state.itemPrice,
       itemDescription: this.state.itemDescription,
       itemLocation: this.state.itemLocation,
+      itemImageUrl: this.state.itemImageUrl,
       timeAdded: Date.now()
     };
     console.log(itemInfo);
+    this.uploadFile(this.state.itemImage, this.state.itemSignedRequest, this.state.itemImageUrl);
     this.props.submitInfo(itemInfo);
   }
 

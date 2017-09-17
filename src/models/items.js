@@ -5,6 +5,7 @@ var itemsSchema = new mongoose.Schema({
   itemPrice: String,
   itemDescription: String,
   itemLocation: String,
+  itemImageUrl: String,
   timeAdded: Number
 });
 

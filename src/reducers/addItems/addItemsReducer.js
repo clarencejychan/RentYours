@@ -11,6 +11,7 @@ export default function(state = {isAdding: false}, action) {
         itemPrice: action.itemPrice,
         itemDescription: action.itemDescription,
         itemLocation: action.itemLocation,
+        itemImageUrl: action.itemImageUrl,
         timeAdded: action.timeAdded
       });
     case ADD_ITEMS_SUCCESS:

@@ -53,6 +53,7 @@ app.post('/api/additem', function (req, res) {
     itemPrice: req.body.itemPrice,
     itemDescription: req.body.itemDescription,
     itemLocation: req.body.itemLocation,
+    itemImageUrl: req.body.itemImageUrl,
     timeAdded: req.body.timeAdded
   });
   item.save(function (err) {
