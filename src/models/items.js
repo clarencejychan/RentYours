@@ -9,4 +9,15 @@ var itemsSchema = new mongoose.Schema({
   timeAdded: Number
 });
 
-module.exports = mongoose.model('Items', itemsSchema);
+itemsSchema.index({ 
+  itemName: 'text', 
+  itemDescription: 'text' },
+  { name: 'itemIndex', 
+    weights: 
+    { itemName: 10, 
+      itemDescription: 5 
+    }
+  }
+);
+
+module.exports = mongoose.model('Items', itemsSchema);  

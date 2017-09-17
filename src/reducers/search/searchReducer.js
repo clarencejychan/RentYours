@@ -13,7 +13,7 @@ export default function(state = { isFetching: false, error: false, searchQuery:"
       return Object.assign({}, state, {
         isFetching: false,
         error: false,
-        items: [action.posts],
+        items: action.posts,
         lastUpdated: action.receivedAt
       });
     case REQUEST_ITEMS_INFO_FAILURE:

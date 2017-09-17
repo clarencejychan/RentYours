@@ -17,7 +17,6 @@ var mongoose = require('mongoose');
 var Items = require('./models/items');
 
 const app = express();
-
 const compiler = webpack(webpackConfig);
 
 mongoose.connect(process.env.MONGO_URI);
@@ -96,9 +95,16 @@ app.get('/api/sign-s3', function(req, res) {
 // Search Grab data
 app.get('/api/search', function (req, res) {
   console.log('hit');
-  res.status(200).json(
-    {item:"test"}
-  );
+  console.log(req.query['item-name']);
+  var searchString = req.query['item-name'];
+  Items.find({$text: {$search: searchString}})
+  .exec(function(err, docs) { 
+    res.status(200).json(
+      {
+        item: docs
+      }
+    );
+  });
 });
 
 // Manage Routes *TEMP FIX*
@@ -109,6 +115,5 @@ app.get('/*', function (req, res) {
 const server = app.listen(process.env.PORT || 3040, function() {
   const host = server.address().address;
   const port = server.address().port;
-  //console.log(fakeSetOfData);
   console.log('Example app listening at http://%s:%s', host, port);
 });

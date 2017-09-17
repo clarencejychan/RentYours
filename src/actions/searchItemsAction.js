@@ -12,7 +12,7 @@ function requestItems(itemName) {
 }
 
 // REQUEST ITEMS SUCCESS ACTION
-function requestItemsSuccess(itemName, itemInfo) {
+function requestItemsSuccess(itemInfo) {
   return {
     type: REQUEST_ITEMS_INFO_SUCCESS,
     receivedAt: Date.now(),
@@ -32,13 +32,12 @@ export default function getSearchItems(itemName) {
   return dispatch => {
     // Show that it is requesting, will be updated after.
     dispatch(requestItems(itemName));
-    // URL todo.
-    return axios.get('/api/search')
+
+    return axios.get(`/api/search?item-name=${itemName}`)
     .then(response => {
-      console.log(response);
       console.log(response.data);
       let json = response.data;
-      dispatch(requestItemsSuccess(itemName, json));
+      dispatch(requestItemsSuccess(json));
     }).catch(error => {
       dispatch(requestItemsFailure(itemName));
     });
