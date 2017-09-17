@@ -50,5 +50,12 @@ $hover-color: #088356;
     background-color: $main-color !important;
     border-color: $main-color !important;
   }
+
+  .item-image {
+    height: 200px;
+    border: 1px #ccc dashed;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
 }
 

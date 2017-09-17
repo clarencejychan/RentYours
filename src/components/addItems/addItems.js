@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import submitInfo from '../../actions/addItemsAction';
 import Spinner from '../assets/spinner/spinner';
+import Dropzone from 'react-dropzone';
+import axios from 'axios';
 
 import './style.scss';
 
@@ -32,12 +34,44 @@ class AddItems extends Component {
 
     this.checkValidation = this.checkValidation.bind(this);
     this.submitInfoHandler = this.submitInfoHandler.bind(this);
+    this.onDrop = this.onDrop.bind(this);
+    this.getSignedRequest = this.getSignedRequest.bind(this);
+    this.uploadFile = this.uploadFile.bind(this);
+
     this.state = {
       itemName: "",
       itemPrice: "",
       itemDescription: "",
-      itemLocation: ""
+      itemLocation: "",
     };
+  }
+
+  // Dropzone Function
+  onDrop(files) {
+    console.log(files[0]);
+    console.log(files[0].name);
+    this.getSignedRequest(files[0]);
+
+  }
+
+
+  getSignedRequest(file) {
+    return axios.get(`/api/sign-s3?file-name=${file.name}&file-type=${file.type}`)
+    .then(response => {
+      console.log(response.data);
+      this.uploadFile(file, response.data.signedRequest, response.data.url);
+    }).catch(error => {
+      console.log(error);
+    }); 
+  }
+
+  uploadFile(file, signedRequest, url) {
+    return axios.put(signedRequest, file)
+    .then(response => {
+      console.log('finished');
+    }).catch(error => {
+      console.log('Could not upload file.');
+    });
   }
 
   // Perform Validation
@@ -84,6 +118,9 @@ class AddItems extends Component {
         <FormItems formType="itemPrice" labelTitle='Price' placeHolderText='Enter price' updateData={ this.checkValidation }/>
         <FormItems formType="itemDescription" labelTitle='Description' placeHolderText='Enter description' updateData={ this.checkValidation }/>
         <FormItems formType="itemLocation" labelTitle='Location' placeHolderText='Enter location' updateData={ this.checkValidation }/>
+        <Dropzone className="item-image" onDrop={this.onDrop}>
+          <p>Upload image of item</p>
+        </Dropzone>
         { this.props.isAdding ? (
           <Spinner />
         ) : (

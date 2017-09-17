@@ -7,6 +7,11 @@ const bodyParser = require('body-parser');
 const fakeSetOfData = require('./data/fakeData');
 var path = require('path');
 
+// Amazon Service
+const aws = require('aws-sdk');
+const S3_BUCKET = process.env.S3_BUCKET;
+aws.config.region = 'us-east-2';
+
 // Model Dependencies
 var mongoose = require('mongoose');
 var Items = require('./models/items');
@@ -58,6 +63,33 @@ app.post('/api/additem', function (req, res) {
     }
   });
   res.sendStatus(200);
+});
+
+// Get Signing URL
+app.get('/api/sign-s3', function(req, res) {
+  console.log('hit');
+  const s3 = new aws.S3();
+  const fileName = req.query['file-name'];
+  const fileType = req.query['file-type'];
+  const s3Params = {
+    Bucket: S3_BUCKET,
+    Key: fileName,
+    Expires: 60,
+    ContentType: fileType,
+    ACL: 'public-read'
+  };
+
+  s3.getSignedUrl('putObject', s3Params, function(error, data) {
+    if (error) {
+      console.log(error);
+      return res.end();
+    }
+    const returnData = {
+      signedRequest: data,
+      url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
+    };
+    res.status(200).json(returnData);
+  });
 });
 
 // Search Grab data

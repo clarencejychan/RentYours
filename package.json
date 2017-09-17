@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/clarencejychan/RentYours#readme",
   "dependencies": {
+    "aws-sdk": "^2.117.0",
     "axios": "^0.16.2",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
@@ -37,6 +38,7 @@
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.1",
     "react-dom": "^15.6.1",
+    "react-dropzone": "^4.1.2",
     "react-icons": "^2.2.5",
     "react-redux": "^5.0.6",
     "react-router": "^4.1.2",
