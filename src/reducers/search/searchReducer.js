@@ -14,6 +14,7 @@ export default function(state = { isFetching: false, error: false, searchQuery:"
         isFetching: false,
         error: false,
         items: action.posts,
+        itemsFetched: true,
         lastUpdated: action.receivedAt
       });
     case REQUEST_ITEMS_INFO_FAILURE:

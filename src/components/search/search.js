@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Button, InputGroup, FormControl } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import SearchButton from 'react-icons/lib/go/search';
 import getSearchItems from '../../actions/searchItemsAction';
@@ -26,6 +27,15 @@ class Search extends Component {
   }
 
   render() {
+    if (this.props.itemsFetchSuccess) {
+      return (
+        <Redirect to={{
+          pathname: '/search',
+          search: `?item-name=${this.props.searchQuery}`
+        }} />
+      );
+    }
+     
     return (
       <Row>
         <Col xs={20} md={12}>
@@ -49,7 +59,9 @@ class Search extends Component {
 
 function mapStateToProps(state) {
   return {
-    isFetching: state.items.isFetching
+    isFetching: state.items.isFetching,
+    searchQuery: state.items.searchQuery,
+    itemsFetchSuccess: state.items.itemsFetched
   };
 }
 

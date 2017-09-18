@@ -35,7 +35,6 @@ export default function getSearchItems(itemName) {
 
     return axios.get(`/api/search?item-name=${itemName}`)
     .then(response => {
-      console.log(response.data);
       let json = response.data;
       dispatch(requestItemsSuccess(json));
     }).catch(error => {

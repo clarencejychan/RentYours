@@ -139,7 +139,6 @@ class AddItems extends Component {
         ) : (
           ""
         )}
-
       </div>
     );
   }
