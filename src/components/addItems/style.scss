@@ -61,4 +61,9 @@ $hover-color: #088356;
     border-radius: 10px;
     margin-bottom: 15px;
   }
+
+  .item-image:hover {
+    border-color: #000000;
+    cursor: pointer;
+  }
 }
