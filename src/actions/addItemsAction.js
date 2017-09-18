@@ -30,7 +30,6 @@ function addItemsFailure() {
   };
 }
 
-
 export default function submitItems(itemInfo) {
   return dispatch => {
     // Dispatch the Add Items Action
