@@ -11,26 +11,29 @@ class SearchResults extends Component {
     super(props);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     // Here I know that someone may be trying to send link to somebody else.
     if (this.props.items && !this.props.items.length && this.props.location.search) {
       let searchText = queryString.parse(this.props.location.search);
       if ('item-name' in searchText) {
-        // Have to use key notation cause of hyphen
+        // Have to use key notation cause of hyphen, dispatch items
         this.props.getSearchItems(searchText['item-name']);
       }
-      // Need to dispatch an action
     }
   }
 
   render() {
-    console.log(this.props.items);
+    if (this.props.items.length > 0) {
+      for (let i = 0; i < this.props.items.length; i++) {
+        console.log(this.props.items[i]);
+      }
+    }
     return (
       <div className='items-wrapper'>
-        Hello { this.props.location.search }
       </div>
     );
   }
+
 }
 
 function mapDispatchToProps(dispatch) {
