@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import queryString from 'query-string'
+import queryString from 'query-string';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Item from './item/item';
@@ -23,17 +23,16 @@ class SearchResults extends Component {
   }
 
   render() {
-    if (this.props.items.length > 0) {
-      for (let i = 0; i < this.props.items.length; i++) {
-        console.log(this.props.items[i]);
-      }
-    }
     return (
       <div className='items-wrapper'>
+        { this.props.items.map((item, index) => (
+          console.log(index),
+          console.log(item.itemName),
+          <Item itemName={item.itemName} key={index} />
+        ))}
       </div>
     );
   }
-
 }
 
 function mapDispatchToProps(dispatch) {
