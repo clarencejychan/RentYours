@@ -10,6 +10,7 @@ var path = require('path');
 // Model Dependencies
 var mongoose = require('mongoose');
 var Items = require('./models/items');
+var User = require('./models/user');
 
 
 const app = express();
