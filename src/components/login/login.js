@@ -33,6 +33,7 @@ class Login extends Component {
   onload() {
     this.GoogleAuth = gapi.auth2.getAuthInstance();
     this.GoogleUser = this.GoogleAuth.currentUser.get();
+    console.log(this.GoogleUser);
     this.renderGoogleButton();
     this.GoogleAuth.isSignedIn.listen(this.signedIn);
     if(this.GoogleAuth.isSignedIn == true){
@@ -50,7 +51,7 @@ class Login extends Component {
       console.log("User is already signed in. Redirect to home page.");
       this.renderSignoutButton();
       //TODO: fix this event listener handler
-      //document.getElementById("signoutButton").addEventListener("click", this.signout());
+      document.getElementById("signoutButton").addEventListener("click", this.signout);
     } else if (this.state.signedIn == false){
       console.log("User is not signed in.");
     }
@@ -58,10 +59,11 @@ class Login extends Component {
 
   signout() {
     this.GoogleAuth.signOut();
+    console.log(this.GoogleAuth.isSignedIn);
     this.renderGoogleButton();
     this.renderSignoutButton();
     this.setState({signedIn: false});
-    document.getElementById("signoutButton").removeEventListener("click", this.signout());
+    document.getElementById("signoutButton").removeEventListener("click", this.signout);
     console.log("User has clicked button and is now signed out. ");
   }
 
@@ -87,7 +89,6 @@ class Login extends Component {
     });
     var signoutButtonId = document.querySelectorAll("[id^='connected']");
     document.getElementById($(signoutButtonId[1]).attr("id")).innerHTML = "Sign Out";
-    console.log("hullo");
   }
 
   render() {
@@ -99,8 +100,10 @@ class Login extends Component {
       loginButton = <div className="google-login"><div className="g-signin2" id="googleButton"></div></div>;
     }
     return (
-      <div className="login-container">
-        {loginButton}
+      <div className="login-page">
+        <div className="login-container">
+          {loginButton}
+        </div>
       </div>
     );
   }

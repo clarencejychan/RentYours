@@ -1,8 +1,25 @@
-.login-container {
+.login-page {
+  background: #83c9d5;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
   padding: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.login-container {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  margin: 0 auto 100px;
+  padding: 80px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 #signoutButton {

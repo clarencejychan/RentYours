@@ -15,6 +15,7 @@ aws.config.region = 'us-east-2';
 // Model Dependencies
 var mongoose = require('mongoose');
 var Items = require('./models/items');
+var User = require('./models/user');
 
 const app = express();
 const compiler = webpack(webpackConfig);
