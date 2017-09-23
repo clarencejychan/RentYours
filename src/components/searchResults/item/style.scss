@@ -1,0 +1,10 @@
+.items-container {
+  width: 200px;
+  .items-image {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .item-text-container {
+    margin-top: 5px;
+  }
+}
