@@ -26,9 +26,8 @@ class SearchResults extends Component {
     return (
       <div className='items-wrapper'>
         { this.props.items.map((item, index) => (
-          console.log(index),
-          console.log(item.itemName),
-          <Item itemName={item.itemName} key={index} />
+          console.log(item),
+          <Item itemInfo={item} key={index} />
         ))}
       </div>
     );
