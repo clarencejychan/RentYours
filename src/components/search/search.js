@@ -26,11 +26,12 @@ class Search extends Component {
     this.props.getSearchItems(itemName);
   }
 
-  componentWillReceiveProps(nprops) {
-    if (nprops.itemsFetchSuccess) {
-      nprops.history.push({
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+    if (nextProps.itemsFetchSuccess) {
+      nextProps.history.push({
         pathname: '/search',
-        search: `?item-name=${this.props.searchQuery}`
+        search: `?item-name=${nextProps.searchQuery}`
       });
     }
   }

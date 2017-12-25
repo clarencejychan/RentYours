@@ -1,6 +1,7 @@
 import {REQUESTING_ITEMS_INFO,
         REQUEST_ITEMS_INFO_SUCCESS,
-        REQUEST_ITEMS_INFO_FAILURE} from '../../actions/types';
+        REQUEST_ITEMS_INFO_FAILURE, 
+        REMOVE_OLD_ITEMS} from '../../actions/types';
 
 export default function(state = { isFetching: false, error: false, searchQuery:"", items:[] }, action) {
   switch (action.type) {
@@ -22,6 +23,10 @@ export default function(state = { isFetching: false, error: false, searchQuery:"
         isFetching: false,
         searchQuery: action.itemName,
         error: true
+      });
+    case REMOVE_OLD_ITEMS:
+      return Object.assign({}, state, {
+        items: []
       });
     default:
       return state;

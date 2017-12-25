@@ -15,6 +15,7 @@ export const REQUEST_CHECKOUT_FAILURE = 'request_checkout_failure';
 export const REQUESTING_ITEMS_INFO = 'request_items_info';
 export const REQUEST_ITEMS_INFO_SUCCESS = 'request_items_info_success';
 export const REQUEST_ITEMS_INFO_FAILURE = 'request_items_info_failure';
+export const REMOVE_OLD_ITEMS = 'remove_old_items';
 
 // LISTING ACTIONS
 export const ADD_ITEMS = 'add_items';

@@ -22,11 +22,13 @@ class SearchResults extends Component {
     }
   }
 
+  // Re-renders twice because gets new props, BUG HERE
   render() {
+    console.log(this.props.items);
     return (
       <div className='items-wrapper'>
         { this.props.items.map((item, index) => (
-          console.log(item),
+          //console.log(item),
           <Item itemInfo={item} key={index} />
         ))}
       </div>
