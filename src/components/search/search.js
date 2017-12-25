@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Button, InputGroup, FormControl } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import SearchButton from 'react-icons/lib/go/search';
 import getSearchItems from '../../actions/searchItemsAction';
@@ -26,16 +26,16 @@ class Search extends Component {
     this.props.getSearchItems(itemName);
   }
 
-  render() {
-    if (this.props.itemsFetchSuccess) {
-      return (
-        <Redirect to={{
-          pathname: '/search',
-          search: `?item-name=${this.props.searchQuery}`
-        }} />
-      );
+  componentWillReceiveProps(nprops) {
+    if (nprops.itemsFetchSuccess) {
+      nprops.history.push({
+        pathname: '/search',
+        search: `?item-name=${this.props.searchQuery}`
+      });
     }
-     
+  }
+
+  render() {
     return (
       <Row>
         <Col xs={20} md={12}>
@@ -71,4 +71,5 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+// Use compose instead?
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
