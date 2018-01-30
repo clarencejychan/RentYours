@@ -50,9 +50,9 @@ app.post('/api/additem', function (req, res) {
   console.log(req.body);
   var item = new Items({
     itemName: req.body.itemName,
-    itemPrice: req.body.itemPrice,
+    itemHelpers: req.body.itemHelpers,
     itemDescription: req.body.itemDescription,
-    itemLocation: req.body.itemLocation,
+    itemTags: req.body.itemTags,
     itemImageUrl: req.body.itemImageUrl,
     timeAdded: req.body.timeAdded
   });

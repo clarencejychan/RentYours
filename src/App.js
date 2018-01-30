@@ -7,11 +7,11 @@ import SearchResults from './components/searchResults/searchResults';
 
 class App extends Component {
   render() {
-    return ( 
+    return (
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/login' component={Login} />
-        <Route exact path='/addlisting' component={AddItems} />
+        <Route exact path='/listproject' component={AddItems} />
         <Route path='/search' component={SearchResults} />
       </Switch>
     );

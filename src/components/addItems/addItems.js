@@ -40,9 +40,9 @@ class AddItems extends Component {
 
     this.state = {
       itemName: "",
-      itemPrice: "",
+      itemHelpers: [],
       itemDescription: "",
-      itemLocation: "",
+      itemTags: [],
       itemImageUrl: "",
       itemSignedRequest: "",
       itemImage: null
@@ -63,7 +63,7 @@ class AddItems extends Component {
       this.setState({itemImageUrl: response.data.url});
     }).catch(error => {
       console.log(error);
-    }); 
+    });
   }
 
   uploadFile(file, signedRequest, url) {
@@ -82,14 +82,14 @@ class AddItems extends Component {
       case "itemName":
         this.setState({itemName: event.target.value});
         break;
-      case "itemPrice":
-        this.setState({itemPrice: event.target.value});
+      case "itemHelpers":
+        this.setState({itemHelpers: event.target.value});
         break;
       case "itemDescription":
         this.setState({itemDescription: event.target.value});
         break;
-      case "itemLocation":
-        this.setState({itemLocation: event.target.value});
+      case "itemTags":
+        this.setState({itemTags: event.target.value});
         break;
       default:
         console.log("SOMETHING WONG IF HERE");;
@@ -99,11 +99,15 @@ class AddItems extends Component {
   submitInfoHandler() {
     // This is terrible code, but need to get something working and don't want to figure out setstate for inner functions.
     // FIXME God so bad
+
+    let helpers = this.state.itemHelpers.split(",");
+    let tags = this.state.itemTags.split(",");
+
     let itemInfo = {
       itemName: this.state.itemName,
-      itemPrice: this.state.itemPrice,
+      itemHelpers: helpers,
       itemDescription: this.state.itemDescription,
-      itemLocation: this.state.itemLocation,
+      itemTags: tags,
       itemImageUrl: this.state.itemImageUrl,
       timeAdded: Date.now()
     };
@@ -116,12 +120,12 @@ class AddItems extends Component {
     return (
       <div className="addlisting-container">
         <div className="addlisting-title">
-          <h2> Add Your Item </h2>
+          <h2> List Your Project </h2>
         </div>
         <FormItems formType="itemName" labelTitle='Item Name' placeHolderText='Enter item name' updateData={ this.checkValidation }/>
-        <FormItems formType="itemPrice" labelTitle='Price' placeHolderText='Enter price' updateData={ this.checkValidation }/>
+        <FormItems formType="itemHelpers" labelTitle='Help Needed?' placeHolderText='Enter what you are looking for' updateData={ this.checkValidation }/>
         <FormItems formType="itemDescription" labelTitle='Description' placeHolderText='Enter description' updateData={ this.checkValidation }/>
-        <FormItems formType="itemLocation" labelTitle='Location' placeHolderText='Enter location' updateData={ this.checkValidation }/>
+        <FormItems formType="itemTags" labelTitle='Tags' placeHolderText='Enter tags' updateData={ this.checkValidation }/>
         <Dropzone className="item-image" onDrop={this.onDrop}>
           <p>Upload image of item</p>
         </Dropzone>

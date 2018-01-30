@@ -1,5 +1,5 @@
-import {ADD_ITEMS, 
-        ADD_ITEMS_SUCCESS, 
+import {ADD_ITEMS,
+        ADD_ITEMS_SUCCESS,
         ADD_ITEMS_FAILURE } from './types';
 import axios from 'axios';
 
@@ -8,9 +8,9 @@ function addItems(itemInfo) {
   return {
     type: ADD_ITEMS,
     itemName: itemInfo.itemName,
-    itemPrice: itemInfo.itemPrice,
+    itemHelpers: itemInfo.itemHelpers,
     itemDescription: itemInfo.itemDescription,
-    itemLocation: itemInfo.itemLocation,
+    itemTags: itemInfo.itemTags,
     itemImageUrl: itemInfo.itemImageUrl,
     timeAdded: itemInfo.timeAdded
   };

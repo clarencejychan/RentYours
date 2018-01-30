@@ -46,14 +46,14 @@ class Home extends Component {
             <Navbar collapseOnSelect className={this.state.scrollPast} id="navbar" role="navigation">
               <Navbar.Header>
                 <Navbar.Brand>
-                  <a href="#" className="nav-logo">RentYours</a>
+                  <a href="#" className="nav-logo">Sidehelp!</a>
                 </Navbar.Brand>
                 <Navbar.Toggle />
               </Navbar.Header>
               <Navbar.Collapse>
                 <Nav pullRight>
-                  <LinkContainer to="/addlisting" className="nav-item">
-                    <NavItem id="list-items">List Items</NavItem>
+                  <LinkContainer to="/listproject" className="nav-item">
+                    <NavItem id="list-items">Add Project</NavItem>
                   </LinkContainer>
                   <LinkContainer to="/listings" className="nav-item">
                     <NavItem id="browse-items" >Browse Items</NavItem>
@@ -72,7 +72,7 @@ class Home extends Component {
             <div className="homepage-inner-container">
               <div className="homepage-inner-container-contents">
                 <div className="logo-container">
-                  <h1 className="logo-text">RentYours</h1>
+                  <h1 className="logo-text">Sidehelp!</h1>
                 </div>
 
                 {/* SEARCH BAR*/}

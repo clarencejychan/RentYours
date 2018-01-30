@@ -1,5 +1,5 @@
-import {ADD_ITEMS, 
-        ADD_ITEMS_SUCCESS, 
+import {ADD_ITEMS,
+        ADD_ITEMS_SUCCESS,
         ADD_ITEMS_FAILURE } from '../../actions/types';
 
 export default function(state = {isAdding: false}, action) {
@@ -8,9 +8,9 @@ export default function(state = {isAdding: false}, action) {
       return Object.assign({}, state, {
         isAdding: true,
         itemName: action.itemName,
-        itemPrice: action.itemPrice,
+        itemHelpers: action.itemHelpers,
         itemDescription: action.itemDescription,
-        itemLocation: action.itemLocation,
+        itemTags: action.itemTags,
         itemImageUrl: action.itemImageUrl,
         timeAdded: action.timeAdded
       });
