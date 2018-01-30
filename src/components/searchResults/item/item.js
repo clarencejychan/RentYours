@@ -7,9 +7,6 @@ class Item extends Component {
       <div id={this.props.itemInfo._id} className='items-container'>
         <img src={this.props.itemInfo.itemImageUrl} className='items-image' />
         <div className='item-text-container'>
-          <span className='item-price'>
-            {this.props.itemInfo.itemPrice}
-          </span>
           <span className='item-name'>
             {this.props.itemInfo.itemName}
           </span>

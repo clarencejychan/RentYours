@@ -96,8 +96,8 @@ app.get('/api/sign-s3', function(req, res) {
 // Search Grab data
 app.get('/api/search', function (req, res) {
   console.log('hit');
-  console.log(req.query['item-name']);
-  var searchString = req.query['item-name'];
+  console.log(req.query['project-name']);
+  var searchString = req.query['project-name'];
   Items.find({$text: {$search: searchString}})
   .exec(function(err, docs) {
     res.status(200).json(

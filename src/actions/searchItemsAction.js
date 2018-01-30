@@ -41,7 +41,7 @@ export default function getSearchItems(itemName) {
     // Show that it is requesting, will be updated after.
     dispatch(requestRemoveOldItems());
     dispatch(requestItems(itemName));
-    return axios.get(`/api/search?item-name=${itemName}`)
+    return axios.get(`/api/search?project-name=${itemName}`)
     .then(response => {
       let json = response.data;
       dispatch(requestItemsSuccess(json));
