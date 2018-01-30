@@ -21,7 +21,7 @@ const Info = () => {
               List old items for rent.
             </h3>
             <p>
-              Put up items that you don't use all the time for short or long term rental.
+              Put up items that you dont use all the time for short or long term rental.
             </p>
           </div>
         </li>
@@ -32,7 +32,7 @@ const Info = () => {
               Shop for the items you need.
             </h3>
             <p>
-              Rent items you only need once, twice or seasonaly. 
+              Rent items you only need once, twice or seasonaly.
             </p>
           </div>
         </li>

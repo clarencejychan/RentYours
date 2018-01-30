@@ -99,7 +99,7 @@ app.get('/api/search', function (req, res) {
   console.log(req.query['item-name']);
   var searchString = req.query['item-name'];
   Items.find({$text: {$search: searchString}})
-  .exec(function(err, docs) { 
+  .exec(function(err, docs) {
     res.status(200).json(
       {
         item: docs
