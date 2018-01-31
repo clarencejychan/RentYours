@@ -86,9 +86,9 @@ class Home extends Component {
 
           {/* Home Page Hero FIX: CREATE AS OWN FUNCTIONAL CLASS*/}
           <Info />
-          <CategoryHighlight category="Classroom" />
-          <CategoryHighlight category="Clothing" />
-          <CategoryHighlight category="Tools" />
+          <CategoryHighlight category="Mobile Development" />
+          <CategoryHighlight category="Web Development" />
+          <CategoryHighlight category="UX Design" />
 
         </div>
       </div>

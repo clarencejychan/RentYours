@@ -15,6 +15,7 @@ class CategoryHighlight extends Component {
             <ItemCard />
             <ItemCard />
             <ItemCard />
+            <ItemCard />
           </div>
       </div>
     );

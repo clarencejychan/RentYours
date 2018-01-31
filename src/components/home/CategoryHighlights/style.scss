@@ -8,4 +8,11 @@ $main-font: 'PT Serif', serif;
   .category-highlight-titles {
     font-family: $main-font;
   }
+
+  .category-highlight-item-cards-container {
+    display: inline-block;
+    height: 80%;
+    width: 100%;
+  }
+
 }

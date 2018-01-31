@@ -1,8 +1,27 @@
 .item-card-container {
+
+  max-width: 25%;
+  width: 25%;
+  height: 100%;
+  display: inline-block;
+  text-align: justify;
+  text-justify: distribute-all-lines;
+
   .item-card-item-picture {
-    background-image: url("https://a0.muscache.com/im/pictures/650757ef-ed35-49b6-a3a0-ce289ab57b42.jpg?aki_policy=poster");
+    background-image: url("https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_design_web/25a538ab6cbe/assets/img/logos_homepage/default@2x.png");
+    background-repeat:no-repeat;
+    background-size:contain;
+    height: 100%;
+    width: 100%;
   }
   .item-card-item-caption {
-    
+
   }
+}
+
+.item-card-container::after {
+  width: 100%;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
 }

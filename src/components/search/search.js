@@ -41,7 +41,7 @@ class Search extends Component {
       <Row>
         <Col xs={20} md={12}>
           <InputGroup bsSize="large">
-            <FormControl className="search-form" placeholder="Enter text" inputRef={ref => { this.input = ref; }} onKeyPress={this.handleEnter} />
+            <FormControl className="search-form" placeholder="Search for a project..." inputRef={ref => { this.input = ref; }} onKeyPress={this.handleEnter} />
               <InputGroup.Button bsSize="large">
                 <Button bsSize="large" className="search-button" onClick={() => this.handleSearch(this.input.value)}>
                 { this.props.isFetching ? (

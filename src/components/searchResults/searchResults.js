@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import queryString from 'query-string';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Item from './item/item';
+import Listing from './projectListing/projectListing';
 import getSearchItems from '../../actions/searchItemsAction';
 
 // Container Component
@@ -26,10 +26,10 @@ class SearchResults extends Component {
   render() {
     console.log(this.props.items);
     return (
-      <div className='items-wrapper'>
+      <div className='project-listing-wrapper'>
         { this.props.items.map((item, index) => (
           //console.log(item),
-          <Item itemInfo={item} key={index} />
+          <Listing itemInfo={item} key={index} />
         ))}
       </div>
     );
