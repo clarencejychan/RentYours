@@ -7,7 +7,7 @@ Motivations for creating this project include seeing friends as well as myself a
 Finally, this was created as a learning experience for myself so I hope to share what I learned for all people who want to go into web development.
 
 # Technology
-The application is mostly **React** on the front-end with a lot of different packages from the ecosystem such as **Redux** and **React-Router v4**. The back-end is built with **NodeJS** with **Express** while using **MongoDB** as a database.  Most of the code is written in ES6 but the server-side stuff needs to be updated.
+The application is mostly **React** on the front-end with a lot of different packages from the ecosystem such as **Redux**, **ReactBootstrap**, and **React-Router v4**. The back-end is built with **NodeJS** with **Express** while using **MongoDB (Mongoose)** as a database.  Most of the code is written in ES6 but the server-side stuff needs to be updated.
 
 The bundler being used is **Webpack** with **Babel** helping to transpile the Javascript code.
 
@@ -31,6 +31,6 @@ Neither of the options will reload the node server if changes are made to `serve
 ## Contributing
 In the spirit of the project itself, please feel free to contribute to any open issues. Some may need environment variables, which can be given if you contact me.
 
-For all issues please create a pull request with a new branch labelled **feature/{ issue name }** and submit a pull request when ready.
+For all issues please create a pull request with a new branch labelled **feature/{ issue name }** and submit a pull request to `develop` when ready.
 
 Thanks!
