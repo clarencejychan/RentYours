@@ -6,7 +6,7 @@ Motivations for creating this project include seeing friends as well as myself a
 
 Finally, this was created as a learning experience for myself so I hope to share what I learned for all people who want to go into web development.
 
-# Technology
+## Technology
 The application is mostly **React** on the front-end with a lot of different packages from the ecosystem such as **Redux**, **ReactBootstrap**, and **React-Router v4**. The back-end is built with **NodeJS** with **Express** while using **MongoDB (Mongoose)** as a database.  Most of the code is written in ES6 but the server-side stuff needs to be updated.
 
 The bundler being used is **Webpack** with **Babel** helping to transpile the Javascript code.
