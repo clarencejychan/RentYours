@@ -1,21 +1,23 @@
-require('dotenv').config();
-const express = require('express');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpack = require('webpack');
-const webpackConfig = require('../webpack.config.js');
-const bodyParser = require('body-parser');
-const fakeSetOfData = require('./data/fakeData');
-var path = require('path');
 
-// Amazon Service
-const aws = require('aws-sdk');
-const S3_BUCKET = process.env.S3_BUCKET;
-aws.config.region = 'us-east-2';
+import dotenv from 'dotenv'
+import express from 'express';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpack from 'webpack';
+import webpackConfig from '../webpack.config.js';
+import bodyParser from 'body-parser';
+import path from 'path';
 
 // Model Dependencies
-var mongoose = require('mongoose');
-var Items = require('./models/items');
-//var User = require('./models/user');
+import mongoose from 'mongoose';
+import Items from './models/items'
+
+// Amazon Service
+import aws from 'aws-sdk';
+
+dotenv.config();
+
+const S3_BUCKET = process.env.S3_BUCKET;
+aws.config.region = 'us-east-2';
 
 const app = express();
 const compiler = webpack(webpackConfig);
@@ -23,7 +25,7 @@ const compiler = webpack(webpackConfig);
 mongoose.connect(process.env.MONGO_URI);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
+db.once('open', () => {
   console.log('Mongoose is Connected');
 });
 
@@ -46,7 +48,7 @@ app.use(bodyParser.urlencoded({
 
 // Routes
 // Add item data to DB
-app.post('/api/additem', function (req, res) {
+app.post('/api/additem', (req, res) => {
   console.log(req.body);
   var item = new Items({
     itemName: req.body.itemName,
@@ -56,7 +58,7 @@ app.post('/api/additem', function (req, res) {
     itemImageUrl: req.body.itemImageUrl,
     timeAdded: req.body.timeAdded
   });
-  item.save(function (err) {
+  item.save((err) => {
     if (err) {
       console.log(err);
     } else {
@@ -67,7 +69,7 @@ app.post('/api/additem', function (req, res) {
 });
 
 // Get Signing URL
-app.get('/api/sign-s3', function(req, res) {
+app.get('/api/sign-s3', (req, res) => {
   console.log('hit');
   const s3 = new aws.S3();
   const fileName = req.query['file-name'];
@@ -80,7 +82,7 @@ app.get('/api/sign-s3', function(req, res) {
     ACL: 'public-read'
   };
 
-  s3.getSignedUrl('putObject', s3Params, function(error, data) {
+  s3.getSignedUrl('putObject', s3Params, (error, data) => {
     if (error) {
       console.log(error);
       return res.end();
@@ -94,12 +96,12 @@ app.get('/api/sign-s3', function(req, res) {
 });
 
 // Search Grab data
-app.get('/api/search', function (req, res) {
+app.get('/api/search', (req, res) => {
   console.log('hit');
   console.log(req.query['project-name']);
   var searchString = req.query['project-name'];
   Items.find({$text: {$search: searchString}})
-  .exec(function(err, docs) {
+  .exec((err, docs) => {
     res.status(200).json(
       {
         item: docs
@@ -109,7 +111,7 @@ app.get('/api/search', function (req, res) {
 });
 
 // Manage Routes *TEMP FIX*
-app.get('/*', function (req, res) {
+app.get('/*', (req, res) => {
   res.sendFile(path.resolve(__dirname + '/../build/index.html'));
 });
 

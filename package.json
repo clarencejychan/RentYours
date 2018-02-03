@@ -6,25 +6,27 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "webpack",
-    "start": "set NODE_ENV=dev && node src/server.js",
+    "start": "set NODE_ENV=dev && babel-node --presets es2015 src/server.js",
     "dev": "webpack-dev-server --hot"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/clarencejychan/RentYours.git"
+    "url": "git+https://github.com/clarencejychan/Sidehelp.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/clarencejychan/RentYours/issues"
+    "url": "https://github.com/clarencejychan/Sidehelp/issues"
   },
-  "homepage": "https://github.com/clarencejychan/RentYours#readme",
+  "homepage": "https://github.com/clarencejychan/Sidehelp#readme",
   "dependencies": {
     "aws-sdk": "^2.117.0",
     "axios": "^0.16.2",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.0",
