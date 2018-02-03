@@ -1,1 +1,1 @@
-web: node src/server.js
+web: babel-node --presets es2015 src/server.js
