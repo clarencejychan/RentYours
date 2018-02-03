@@ -103,6 +103,14 @@ class AddItems extends Component {
     let helpers = this.state.itemHelpers.split(",");
     let tags = this.state.itemTags.split(",");
 
+    helpers.forEach((helper, i) => {
+      helpers[i] = helper.trim();
+    });
+
+    tags.forEach((tag, i) => {
+      tags[i] = tag.trim();
+    });
+
     let itemInfo = {
       itemName: this.state.itemName,
       itemHelpers: helpers,
