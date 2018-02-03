@@ -1,3 +1,4 @@
+
 # Sidehelp!
 
 A peer-to-peer marketplace for finding help with side projects. Users can post their projects with descriptions while others can contact owners of interesting projects to help them.
@@ -20,8 +21,10 @@ Install [Homebrew](https://brew.sh/)
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 Follow instructions [here](http://blog.teamtreehouse.com/install-node-js-npm-mac) to install `node` and `nvm`
-`brew install node`  
-`brew install nvm`
+```
+brew install node
+brew install nvm
+```
 
 Once installed you should be able to run `npm install` which will fetch all the necessary dependencies for you. If anything seems to fail, clear out your `node_modules` and try again.
 
