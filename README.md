@@ -16,6 +16,13 @@ The project is currently being hosted on **Heroku** cause it's cheap and easy bu
 ## Installation
 In order to run the project locally you'll need `node` installed as well as `nvm`.
 
+Install [Homebrew](https://brew.sh/)
+`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+Follow instructions [here](http://blog.teamtreehouse.com/install-node-js-npm-mac) to install `node` and `nvm`
+`brew install node`
+`brew install nvm`
+
 Once installed you should be able to run `npm install` which will fetch all the necessary dependencies for you. If anything seems to fail, clear out your `node_modules` and try again.
 
 To start up the project there are two options, `npm start` or `npm start dev`, both running on `port 3040`.
