@@ -2,16 +2,17 @@
 
   max-width: 25%;
   width: 25%;
-  height: 100%;
   display: inline-block;
   text-align: justify;
   text-justify: distribute-all-lines;
 
+    // Leaving it at 40% but realistiaclaly we need to resize before upload to certain image sizes. Or else
+    // This will never work for other images of different sizes.
   .item-card-item-picture {
-    background-image: url("https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_design_web/25a538ab6cbe/assets/img/logos_homepage/default@2x.png");
+    background-image: url("https://rentyours.s3.amazonaws.com/Octocat.png");
     background-repeat:no-repeat;
     background-size:contain;
-    height: 100%;
+    height: 40%;
     width: 100%;
   }
   .item-card-item-caption {
