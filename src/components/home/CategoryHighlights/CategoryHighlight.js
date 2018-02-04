@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import ItemCard from './itemCards/ItemCard';
 import './style.scss';
 
+// Container Component for itemCards (Projects) on Home Page.
 class CategoryHighlight extends Component {
   constructor(props) {
     super(props);
   }
+
 
   render() {
     return (

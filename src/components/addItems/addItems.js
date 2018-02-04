@@ -100,18 +100,22 @@ class AddItems extends Component {
     // This is terrible code, but need to get something working and don't want to figure out setstate for inner functions.
     // FIXME God so bad
 
-    let helpers = this.state.itemHelpers.split(",");
-    let tags = this.state.itemTags.split(",");
+    if (!this.state.itemHelpers) {
+      var helpers = this.state.itemHelpers.split(",");
+      helpers.forEach((helper, i) => {
+        helpers[i] = helper.trim();
+      });
 
-    helpers.forEach((helper, i) => {
-      helpers[i] = helper.trim();
-    });
+    }
 
-    tags.forEach((tag, i) => {
-      tags[i] = tag.trim();
-    });
+    if (!this.state.itemTags) {
+      var tags = this.state.itemTags.split(",");
+      tags.forEach((tag, i) => {
+        tags[i] = tag.trim();
+      });
+    }
 
-    let itemInfo = {
+    let projectInfo = {
       itemName: this.state.itemName,
       itemHelpers: helpers,
       itemDescription: this.state.itemDescription,
@@ -119,9 +123,16 @@ class AddItems extends Component {
       itemImageUrl: this.state.itemImageUrl,
       timeAdded: Date.now()
     };
-    console.log(itemInfo);
-    this.uploadFile(this.state.itemImage, this.state.itemSignedRequest, this.state.itemImageUrl);
-    this.props.submitInfo(itemInfo);
+
+    if (!this.state.itemImage) {
+      projectInfo.itemImageUrl = "https://rentyours.s3.amazonaws.com/Octocat.png";
+    } else {
+      this.uploadFile(this.state.itemImage, this.state.itemSignedRequest, this.state.itemImageUrl);
+    }
+
+    console.log(projectInfo);
+
+    this.props.submitInfo(projectInfo);
   }
 
   render() {
@@ -130,7 +141,7 @@ class AddItems extends Component {
         <div className="addlisting-title">
           <h2> List Your Project </h2>
         </div>
-        <FormItems formType="itemName" labelTitle='Item Name' placeHolderText='Enter item name' updateData={ this.checkValidation }/>
+        <FormItems formType="itemName" labelTitle='Project Name' placeHolderText='Enter item name' updateData={ this.checkValidation }/>
         <FormItems formType="itemHelpers" labelTitle='Help Needed?' placeHolderText='Enter what you are looking for' updateData={ this.checkValidation }/>
         <FormItems formType="itemDescription" labelTitle='Description' placeHolderText='Enter description' updateData={ this.checkValidation }/>
         <FormItems formType="itemTags" labelTitle='Tags' placeHolderText='Enter tags' updateData={ this.checkValidation }/>
