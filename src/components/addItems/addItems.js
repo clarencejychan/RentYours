@@ -99,9 +99,10 @@ class AddItems extends Component {
   submitInfoHandler() {
     // This is terrible code, but need to get something working and don't want to figure out setstate for inner functions.
     // FIXME God so bad
+    let { helpers, tags } = [];
 
     if (!this.state.itemHelpers) {
-      var helpers = this.state.itemHelpers.split(",");
+      helpers = this.state.itemHelpers.split(",");
       helpers.forEach((helper, i) => {
         helpers[i] = helper.trim();
       });
@@ -109,7 +110,7 @@ class AddItems extends Component {
     }
 
     if (!this.state.itemTags) {
-      var tags = this.state.itemTags.split(",");
+      tags = this.state.itemTags.split(",");
       tags.forEach((tag, i) => {
         tags[i] = tag.trim();
       });
