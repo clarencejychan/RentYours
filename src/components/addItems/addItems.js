@@ -101,7 +101,7 @@ class AddItems extends Component {
     // FIXME God so bad
     let { helpers, tags } = [];
 
-    if (!this.state.itemHelpers) {
+    if (this.state.itemHelpers.length >= 1) {
       helpers = this.state.itemHelpers.split(",");
       helpers.forEach((helper, i) => {
         helpers[i] = helper.trim();
@@ -109,7 +109,7 @@ class AddItems extends Component {
 
     }
 
-    if (!this.state.itemTags) {
+    if (this.state.itemTags.length >= 1) {
       tags = this.state.itemTags.split(",");
       tags.forEach((tag, i) => {
         tags[i] = tag.trim();
