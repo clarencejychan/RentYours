@@ -1,8 +1,9 @@
-var mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 var itemsSchema = new mongoose.Schema({
   itemName: String,
   itemHelpers: [String],
+  itemCategory: String,
   itemDescription: String,
   itemTags: [String],
   itemImageUrl: String,

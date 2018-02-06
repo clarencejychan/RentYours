@@ -8,6 +8,7 @@ function addItems(itemInfo) {
   return {
     type: ADD_ITEMS,
     itemName: itemInfo.itemName,
+    itemCategory: itemInfo.itemCategory,
     itemHelpers: itemInfo.itemHelpers,
     itemDescription: itemInfo.itemDescription,
     itemTags: itemInfo.itemTags,

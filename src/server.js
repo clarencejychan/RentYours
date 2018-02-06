@@ -50,9 +50,10 @@ app.use(bodyParser.urlencoded({
 // Add item data to DB
 app.post('/api/additem', (req, res) => {
   console.log(req.body);
-  var item = new Items({
+  let item = new Items({
     itemName: req.body.itemName,
     itemHelpers: req.body.itemHelpers,
+    itemCategory: req.body.itemCategory,
     itemDescription: req.body.itemDescription,
     itemTags: req.body.itemTags,
     itemImageUrl: req.body.itemImageUrl,
@@ -61,11 +62,13 @@ app.post('/api/additem', (req, res) => {
   item.save((err) => {
     if (err) {
       console.log(err);
+      res.sendStatus(400);
     } else {
       console.log('Item Added Success');
+      res.sendStatus(200);
     }
   });
-  res.sendStatus(200);
+
 });
 
 // Get Signing URL
@@ -99,7 +102,7 @@ app.get('/api/sign-s3', (req, res) => {
 app.get('/api/search', (req, res) => {
   console.log('hit');
   console.log(req.query['project-name']);
-  var searchString = req.query['project-name'];
+  let searchString = req.query['project-name'];
   Items.find({$text: {$search: searchString}})
   .exec((err, docs) => {
     res.status(200).json(
@@ -109,6 +112,14 @@ app.get('/api/search', (req, res) => {
     );
   });
 });
+
+/**
+app.get('/api/browse', (req, res) => {
+  let browseParams = req.query['']
+
+});
+**/
+
 
 // Manage Routes *TEMP FIX*
 app.get('/*', (req, res) => {

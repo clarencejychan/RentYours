@@ -9,6 +9,7 @@ export default function(state = {isAdding: false}, action) {
         isAdding: true,
         itemName: action.itemName,
         itemHelpers: action.itemHelpers,
+        itemCategory: action.itemCategory,
         itemDescription: action.itemDescription,
         itemTags: action.itemTags,
         itemImageUrl: action.itemImageUrl,

@@ -14,7 +14,19 @@ const FormItems = (props) => {
     return (
       <FormGroup>
         <ControlLabel className="additem-label">{props.labelTitle}</ControlLabel>
-          <FormControl componentClass="textarea" type="text" placeholder={props.placeHolderText} onChange={(event) => props.updateData(props.formType, event)}  />
+        <FormControl componentClass="textarea" type="text" placeholder={props.placeHolderText} onChange={(event) => props.updateData(props.formType, event)}  />
+      </FormGroup>
+    );
+  } else if (props.formType === "itemCategory"){
+    return (
+      <FormGroup>
+        <ControlLabel className="additem-label">{props.labelTitle}</ControlLabel>
+        <FormControl componentClass="select" placeholder={props.placeHolderText} onChange={(event) => props.updateData(props.formType, event)} >
+          <option value="Web">Mobile</option>
+          <option value="Mobile">Web</option>
+          <option value="UX">UX</option>
+          <option value="Other">Other</option>
+        </FormControl>
       </FormGroup>
     );
   } else {
@@ -41,6 +53,7 @@ class AddItems extends Component {
     this.state = {
       itemName: "",
       itemHelpers: [],
+      itemCategory: "",
       itemDescription: "",
       itemTags: [],
       itemImageUrl: "",
@@ -85,6 +98,10 @@ class AddItems extends Component {
       case "itemHelpers":
         this.setState({itemHelpers: event.target.value});
         break;
+      case "itemCategory":
+        console.log(event.target.value);
+        this.setState({itemCategory: event.target.value});
+        break;
       case "itemDescription":
         this.setState({itemDescription: event.target.value});
         break;
@@ -119,6 +136,7 @@ class AddItems extends Component {
     let projectInfo = {
       itemName: this.state.itemName,
       itemHelpers: helpers,
+      itemCategory: this.state.itemCategory,
       itemDescription: this.state.itemDescription,
       itemTags: tags,
       itemImageUrl: this.state.itemImageUrl,
@@ -144,6 +162,7 @@ class AddItems extends Component {
         </div>
         <FormItems formType="itemName" labelTitle='Project Name' placeHolderText='Enter item name' updateData={ this.checkValidation }/>
         <FormItems formType="itemHelpers" labelTitle='Help Needed?' placeHolderText='Enter what you are looking for' updateData={ this.checkValidation }/>
+        <FormItems formType="itemCategory" labelTitle='Category' updateData={ this.checkValidation}/>
         <FormItems formType="itemDescription" labelTitle='Description' placeHolderText='Enter description' updateData={ this.checkValidation }/>
         <FormItems formType="itemTags" labelTitle='Tags' placeHolderText='Enter tags' updateData={ this.checkValidation }/>
         <Dropzone className="item-image" onDrop={this.onDrop}>
