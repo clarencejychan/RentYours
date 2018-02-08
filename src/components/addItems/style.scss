@@ -56,14 +56,21 @@ $hover-color: #088356;
   }
 
   .item-image {
-    height: 200px;
+    display: flex;
+    justify-content: center;
+    height: 150px;
     border: 1px #ccc dashed;
     border-radius: 10px;
     margin-bottom: 15px;
+
+    .item-image-description {
+      color: #ccc;
+      align-self: center;
+    }
   }
 
   .item-image:hover {
-    border-color: #000000;
+    border-color: $hover-color;
     cursor: pointer;
   }
 }

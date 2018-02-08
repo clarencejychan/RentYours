@@ -14,7 +14,7 @@ const FormItems = (props) => {
     return (
       <FormGroup>
         <ControlLabel className="additem-label">{props.labelTitle}</ControlLabel>
-        <FormControl componentClass="textarea" type="text" placeholder={props.placeHolderText} onChange={(event) => props.updateData(props.formType, event)}  />
+        <FormControl componentClass="textarea" type="text" placeholder={props.placeHolderText} onChange={(event) => props.updateData(props.formType, event)}  rows={5}/>
       </FormGroup>
     );
   } else if (props.formType === "itemCategory"){
@@ -162,11 +162,11 @@ class AddItems extends Component {
         </div>
         <FormItems formType="itemName" labelTitle='Project Name' placeHolderText='Enter item name' updateData={ this.checkValidation }/>
         <FormItems formType="itemHelpers" labelTitle='Help Needed?' placeHolderText='Enter what you are looking for' updateData={ this.checkValidation }/>
-        <FormItems formType="itemCategory" labelTitle='Category' updateData={ this.checkValidation}/>
+        <FormItems formType="itemCategory" labelTitle='Category' updateData={ this.checkValidation }/>
         <FormItems formType="itemDescription" labelTitle='Description' placeHolderText='Enter description' updateData={ this.checkValidation }/>
         <FormItems formType="itemTags" labelTitle='Tags' placeHolderText='Enter tags' updateData={ this.checkValidation }/>
         <Dropzone className="item-image" onDrop={this.onDrop}>
-          <p>Upload image of item</p>
+          <p className="item-image-description">Upload An Image of your Project</p>
         </Dropzone>
         { this.props.isAdding ? (
           <Spinner />
