@@ -36,7 +36,7 @@ function requestRemoveOldItems() {
   };
 }
 
-export default function getSearchItems(itemName) {
+function getSearchItems(itemName) {
   return dispatch => {
     // Show that it is requesting, will be updated after.
     dispatch(requestRemoveOldItems());
@@ -49,4 +49,25 @@ export default function getSearchItems(itemName) {
       dispatch(requestItemsFailure(itemName));
     });
   };
+}
+
+// should search for top 4 in a category
+function getCategoryHighlights() {
+  return dispatch => {
+    // Show that it is requesting, will be updated after.
+    dispatch(requestRemoveOldItems());
+    dispatch(requestItems(itemName));
+    return axios.get(`/api/search?limit=4`)
+    .then(response => {
+      let json = response.data;
+      dispatch(requestItemsSuccess(json));
+    }).catch(error => {
+      dispatch(requestItemsFailure(itemName));
+    });
+  };
+}
+
+export {
+  getSearchItems,
+  getCategoryHighlights
 }

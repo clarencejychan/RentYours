@@ -3,6 +3,7 @@ export const LOGGING_IN = 'logging_in';
 export const LOGIN_SUCCESS = 'login_successful';
 export const LOGIN_FAILURE = ' login_failure';
 
+// SEARCH ACTIONS
 export const REQUESTING_ITEMS_INFO = 'request_items_info';
 export const REQUEST_ITEMS_INFO_SUCCESS = 'request_items_info_success';
 export const REQUEST_ITEMS_INFO_FAILURE = 'request_items_info_failure';

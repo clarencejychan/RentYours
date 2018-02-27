@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ItemCard from './itemCards/ItemCard';
+import { bindActionCreators } from 'redux';
+import getCategoryHighlight from '../../../actions/searchItemsAction'
 import './style.scss';
 
 // Container Component for itemCards (Projects) on Home Page.
@@ -8,6 +10,10 @@ class CategoryHighlight extends Component {
     super(props);
   }
 
+  // On componentdidmount, should
+  componentDidMount() {
+    this.props.getCategoryHighlights();
+  }
 
   render() {
     return (
@@ -22,7 +28,12 @@ class CategoryHighlight extends Component {
       </div>
     );
   }
-
 };
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    getCategoryHighlights: getCategoryHighlights
+  }, dispatch);
+}
+
 
 export default CategoryHighlight;

@@ -102,15 +102,41 @@ app.get('/api/sign-s3', (req, res) => {
 app.get('/api/search', (req, res) => {
   console.log('hit');
   console.log(req.query['project-name']);
-  let searchString = req.query['project-name'];
-  Items.find({$text: {$search: searchString}})
-  .exec((err, docs) => {
-    res.status(200).json(
-      {
-        item: docs
+  let searchString;
+  if (req.query['project'] != null) {
+    if (err) {
+      res.status(503);
+    }
+    searchString = req.query['project-name'];
+    Items.find({
+      $text:
+        {
+          $search: searchString
+        }
+    })
+    .exec((err, docs) => {
+      res.status(200).json(
+        {
+          item : docs
+        }
+      );
+    });
+  }
+  if (req.query['search'] != null) {
+    searchString = req.query['search'];
+    Items.find({}).limit(4).
+    exec((err, docs) => {
+      if (err) {
+        res.status(503);
       }
-    );
-  });
+      res.status(200).json(
+        {
+          item : docs
+        }
+      )
+    });
+  }
+
 });
 
 /**
